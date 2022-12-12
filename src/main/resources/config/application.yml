@@ -78,6 +78,10 @@ spring:
                     time_zone: UTC
                 connection:
                     provider_disables_autocommit: true
+            javax:
+                persistence:
+                    query:
+                        timeout: 3000000
         hibernate:
             ddl-auto: none
             naming:
@@ -166,6 +170,9 @@ camunda:
             id: Admin
             password: ${CAMUNDA_BPM_ADMIN-USER_PASSWORD}
             first-name: Admin account
+        generic-properties:
+            properties:
+                failed-job-retry-time-cycle: PT1M,PT5M,PT10M
 
 # ==================
 # keycloak server to server config
