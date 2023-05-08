@@ -23,7 +23,8 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_13
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -40,6 +41,8 @@ dependencies {
     implementation("com.ritense.valtimo:document:$valtimoVersion")
     implementation("com.ritense.valtimo:form:$valtimoVersion")
     implementation("com.ritense.valtimo:form-link:$valtimoVersion")
+    implementation("com.ritense.valtimo:form-flow:$valtimoVersion")
+    implementation("com.ritense.valtimo:form-flow-valtimo:$valtimoVersion")
     implementation("com.ritense.valtimo:keycloak-iam:$valtimoVersion")
     implementation("com.ritense.valtimo:local-document-generation:$valtimoVersion")
     implementation("com.ritense.valtimo:local-resource:$valtimoVersion")
@@ -47,11 +50,10 @@ dependencies {
     implementation("com.ritense.valtimo:milestones:$valtimoVersion")
     implementation("com.ritense.valtimo:plugin-valtimo:$valtimoVersion")
     implementation("com.ritense.valtimo:process-document:$valtimoVersion")
-    implementation("com.ritense.valtimo:view-configurator:$valtimoVersion")
     implementation("com.ritense.valtimo:web:$valtimoVersion")
     implementation("com.ritense.valtimo:test-utils-common:$valtimoVersion")
 
-    implementation("org.postgresql:postgresql:42.3.1")
+    implementation("mysql:mysql-connector-java")
 
     // Kotlin logger
     implementation("io.github.microutils:kotlin-logging:2.1.21")
@@ -71,7 +73,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "13"
+        jvmTarget = "17"
     }
 }
 
