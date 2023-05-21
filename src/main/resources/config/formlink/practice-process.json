@@ -1,0 +1,12 @@
+[
+    {
+        "formName": "practice.start-form",
+        "formLinkElementId": "PracticeStartEvent",
+        "formAssociationType": "start-event"
+    },
+    {
+        "formName": "practice.more-input",
+        "formLinkElementId": "MoreInputTask",
+        "formAssociationType": "user-task"
+    }
+]

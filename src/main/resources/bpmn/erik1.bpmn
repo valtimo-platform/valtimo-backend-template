@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1opx20h" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.4.2">
+  <bpmn:process id="erik-process" name="erik" isExecutable="true">
+    <bpmn:startEvent id="ErikStartStartEvent" name="erik start">
+      <bpmn:outgoing>Flow_1c93g4b</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="ErikEndEndEvent" name="erik end">
+      <bpmn:incoming>Flow_1gz3kny</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1c93g4b" sourceRef="ErikStartStartEvent" targetRef="ErikInputTask" />
+    <bpmn:sequenceFlow id="Flow_0xtaouk" sourceRef="ErikInputTask" targetRef="ErikHelloWorldTask" />
+    <bpmn:serviceTask id="ErikHelloWorldTask" name="erik hello world" camunda:expression="${helloWorld.helloWorld(documentVariableDelegate.findValueByJsonPointer(&#34;/startInput&#34;,execution), documentVariableDelegate.findValueByJsonPointer(&#34;/message&#34;,execution))}">
+      <bpmn:incoming>Flow_0xtaouk</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sc9rjn</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="ErikInputTask" name="erik input" camunda:candidateGroups="ROLE_USER">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_1c93g4b</bpmn:incoming>
+      <bpmn:outgoing>Flow_0xtaouk</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0sc9rjn" sourceRef="ErikHelloWorldTask" targetRef="flow" />
+    <bpmn:sequenceFlow id="Flow_1gz3kny" sourceRef="flow" targetRef="ErikEndEndEvent" />
+    <bpmn:userTask id="flow" name="flow" camunda:candidateGroups="ROLE_USER">
+      <bpmn:incoming>Flow_0sc9rjn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gz3kny</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="erik-process">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="ErikStartStartEvent">
+        <dc:Bounds x="192" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="190" y="145" width="43" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0i09enx_di" bpmnElement="ErikEndEndEvent">
+        <dc:Bounds x="1022" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1020" y="145" width="40" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gzowqg_di" bpmnElement="ErikHelloWorldTask">
+        <dc:Bounds x="510" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0s0a1n6_di" bpmnElement="ErikInputTask">
+        <dc:Bounds x="320" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03odbjg_di" bpmnElement="flow">
+        <dc:Bounds x="720" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1c93g4b_di" bpmnElement="Flow_1c93g4b">
+        <di:waypoint x="228" y="120" />
+        <di:waypoint x="320" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xtaouk_di" bpmnElement="Flow_0xtaouk">
+        <di:waypoint x="420" y="120" />
+        <di:waypoint x="510" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sc9rjn_di" bpmnElement="Flow_0sc9rjn">
+        <di:waypoint x="610" y="120" />
+        <di:waypoint x="720" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gz3kny_di" bpmnElement="Flow_1gz3kny">
+        <di:waypoint x="820" y="120" />
+        <di:waypoint x="1022" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

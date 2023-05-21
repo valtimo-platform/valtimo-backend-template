@@ -1,0 +1,22 @@
+[
+    {
+        "formName": "erik-process.start-form",
+        "formLinkElementId": "ErikStartStartEvent",
+        "formAssociationType": "start-event"
+    },
+    {
+        "formName": "erik-process.erik-input",
+        "formLinkElementId": "ErikInputTask",
+        "formAssociationType": "user-task"
+    },
+    {
+        "formName": "erik-process.more-input",
+        "formLinkElementId": "MoreInputTask",
+        "formAssociationType": "user-task"
+    },
+    {
+        "formFlowName": "gowiththeflow:latest",
+        "formLinkElementId": "flow",
+        "formAssociationType": "user-task"
+    }
+]

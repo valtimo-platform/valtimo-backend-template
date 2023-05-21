@@ -1,0 +1,48 @@
+{
+  "display": "form",
+  "components": [
+      {
+          "type": "select",
+          "label": "Single Select",
+          "key": "more-input-tmp",
+          "placeholder": "Select one",
+          "data": {
+              "values": [
+                  {"value": "apple", "label": "Apple"},
+                  {"value": "banana", "label": "Banana"},
+                  {"value": "pear", "label": "Pear"},
+                  {"value": "other", "label": "Other"}
+              ]
+          },
+          "dataSrc": "values",
+          "defaultValue": "banana",
+          "template": "<span>{{ item.label }}</span>",
+          "input": false
+      },
+      {
+          "label": "Other!",
+          "tableView": true,
+          "key": "more-input-other-tmp",
+          "type": "textfield",
+          "input": false,
+          "customConditional": "show = data.more-input-tmp == 'other';"
+      },
+      {
+          "label": "Bla",
+          "key": "more-input",
+          "type": "hidden",
+          "input": true,
+          "tableView": false,
+          "calculateValue": "value = data.more-input-tmp == 'other' ? data.more-input-other-tmp : data.more-input-tmp "
+      },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "input": true,
+      "tableView": false
+    }
+  ]
+}
+

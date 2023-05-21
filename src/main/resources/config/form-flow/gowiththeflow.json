@@ -1,0 +1,61 @@
+{
+    "startStep": "startStep",
+    "steps": [
+        {
+            "key": "startStep",
+            "nextSteps": [
+                {
+                    "step": "finalStep",
+                    "condition": "${step.submissionData.start == 1}"
+                },
+                {
+                    "step": "step2",
+                    "condition": "${step.submissionData.start == 2}"
+                },
+                {
+                    "step": "step3",
+                    "condition": "${step.submissionData.start == 3}"
+                }
+            ],
+            "type": {
+                "name": "form",
+                "properties": {
+                    "definition": "flow-start-step"
+                }
+            }
+        },
+        {
+            "key": "step2",
+            "nextStep": "startStep",
+            "type": {
+                "name": "form",
+                "properties": {
+                    "definition": "flow-step2"
+                }
+            }
+        },
+        {
+            "key": "step3",
+            "nextStep": "startStep",
+            "type": {
+                "name": "form",
+                "properties": {
+                    "definition": "flow-step3"
+                }
+            }
+        },
+        {
+            "key": "finalStep",
+            "type": {
+                "name": "form",
+                "properties": {
+                    "definition": "flow-final-step"
+                }
+            },
+            "onComplete": [
+                "${goWithTheFlowService.storeSubmission(step.submissionData, additionalProperties)}",
+                "${goWithTheFlowService.finishTask(additionalProperties)}"
+            ]
+        }
+    ]
+}
