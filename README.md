@@ -2,7 +2,7 @@
 ## Prerequisites
 - Java 17
 - A running Keycloak instance
-- A running MySQL server
+- A running Postgresql server
 
 ## Configuration
 - Add a properties file to the project root. This file should have the name ".env.properties"
