@@ -29,29 +29,30 @@ jobs:
             - name: Set up JDK 17
               uses: actions/setup-java@v3
               with:
-                 distribution: zulu
-                 java-version: 17
+                  distribution: zulu
+                  java-version: 17
 
             - name: 'Generate unique docker tag to deploy'
               id: prep
               run: |
                   branch=${GITHUB_REF##*/}
                   sha=${GITHUB_SHA::8}
-                  echo "image_tag=${branch}-${sha}" >> "$GITHUB_OUTPUT"
+                  ts=$(date +'%Y%m%d%H%M')
+                  echo "image_tag=${branch}-${ts}-${sha}" >> "$GITHUB_OUTPUT"
 
             - name: Unit test
               run: ./gradlew clean test
 
             - name: Integration test
               run: ./gradlew integrationTest
-              if: github.ref_name == 'main'
+              if: (!github.ref_name.contains('feature') || !github.ref_name.contains('bugfix'))
 
             - name: Build artifacts
               run: ./gradlew build
 
             - name: SonarQube scan
               run: ./gradlew sonarqube
-              if: github.ref_name == 'main'
+              if: (!github.ref_name.contains('feature') || !github.ref_name.contains('bugfix'))
 
             - name: Archive build folder
               uses: actions/upload-artifact@v2
