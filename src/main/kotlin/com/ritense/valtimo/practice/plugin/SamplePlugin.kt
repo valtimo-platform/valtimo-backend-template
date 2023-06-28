@@ -17,7 +17,6 @@ class SamplePlugin(
     val sampleClient: SampleClient
 ) {
 
-
     @PluginProperty(key = "url", secret = false)
     lateinit var url: URI
     @PluginProperty(key = "username", secret = false)
@@ -37,5 +36,4 @@ class SamplePlugin(
     ) {
         sampleClient.hello()
     }
-
 }
