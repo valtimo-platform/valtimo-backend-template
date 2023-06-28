@@ -1,0 +1,25 @@
+{
+    "$id": "practice.schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Practice",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "startInput": {
+            "type": "string"
+        },
+        "message": {
+            "type": "string"
+        },
+        "more-input": {
+            "type": "string"
+        },
+        "more-input2": {
+            "type": "string"
+        },
+        "rating": {
+            "type": "integer"
+        }
+    },
+    "definitions": {}
+}

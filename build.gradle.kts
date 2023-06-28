@@ -49,10 +49,16 @@ dependencies {
     implementation("com.ritense.valtimo:local-resource:$valtimoVersion")
     implementation("com.ritense.valtimo:local-mail:$valtimoVersion")
     implementation("com.ritense.valtimo:milestones:$valtimoVersion")
+    implementation("com.ritense.valtimo:object-management:$valtimoVersion")
+    implementation("com.ritense.valtimo:objecten-api-authentication:$valtimoVersion")
+    implementation("com.ritense.valtimo:objecten-api:$valtimoVersion")
+    implementation("com.ritense.valtimo:objecttypen-api:$valtimoVersion")
+    implementation("com.ritense.valtimo:openzaak:$valtimoVersion")
     implementation("com.ritense.valtimo:plugin-valtimo:$valtimoVersion")
     implementation("com.ritense.valtimo:process-document:$valtimoVersion")
     implementation("com.ritense.valtimo:web:$valtimoVersion")
     implementation("com.ritense.valtimo:test-utils-common:$valtimoVersion")
+    implementation("com.ritense.valtimo:zaken-api:$valtimoVersion")
 
     implementation("org.postgresql:postgresql:42.6.0")
 

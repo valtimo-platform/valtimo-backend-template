@@ -135,7 +135,7 @@ valtimo:
     connector-encryption:
         secret: ${VALTIMO_CONNECTORENCRYPTION_SECRET}
     plugin:
-        encryption-secret: "abcdefghijklmnop"
+        encryption-secret: "579156b12b9a457a579156b12b9a457a"
     database: postgres
 
 spring-actuator:

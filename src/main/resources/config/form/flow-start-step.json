@@ -1,0 +1,33 @@
+{
+    "display": "form",
+    "components": [
+        {
+            "label": "Image !",
+            "tableView": true,
+            "key": "niceImage",
+            "type": "htmlelement",
+            "input": true,
+            "tag": "div",
+            "content": "<img src=\"https://i.ibb.co/gPKG3zh/island-large.png\" width=\"600\" height=\"600\" alt=\"Gemeente Amsterdam Logo\" border=\"0\"><p><h1>Where do you think we can find a treasure?<br>1. Behind the rock <br> 2. Behind the tree.<br> 3. Behind the bush</h1>"
+        },
+        {
+            "label": "",
+
+            "tableView": true,
+            "key": "start",
+            "type": "number",
+            "input": true,
+            "dataType": "number"
+        },
+
+        {
+            "type": "button",
+            "label": "Submit",
+            "key": "submit",
+            "disableOnInvalid": true,
+            "input": true,
+            "tableView": false
+        }
+    ]
+}
+

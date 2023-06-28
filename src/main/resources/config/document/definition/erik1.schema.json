@@ -1,0 +1,28 @@
+{
+    "$id": "erik1.schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Erik",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "startInput": {
+            "type": "string"
+        },
+        "message": {
+            "type": "string"
+        },
+        "more-input": {
+            "type": "string"
+        },
+        "submit": {
+            "type": "boolean"
+        },
+        "start": {
+            "type": "integer"
+        },
+        "rating": {
+            "type": "integer"
+        }
+    },
+    "definitions": {}
+}
