@@ -5,6 +5,6 @@ import com.ritense.plugin.service.PluginService
 
 class DigitaalKlantDossierPluginFactory(
     pluginService: PluginService
-): PluginFactory<DigitaalKlantDossierPlugin>(pluginService) {
-    override fun create() : DigitaalKlantDossierPlugin = DigitaalKlantDossierPlugin()
+) : PluginFactory<DigitaalKlantDossierPlugin>(pluginService) {
+    override fun create(): DigitaalKlantDossierPlugin = DigitaalKlantDossierPlugin()
 }
