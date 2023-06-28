@@ -45,14 +45,14 @@ jobs:
 
             - name: Integration test
               run: ./gradlew integrationTest
-              if: (!github.ref_name.contains('feature') || !github.ref_name.contains('bugfix'))
+              if: ${{ !contains(github.ref_name,'feature') || !contains(github.ref_name,'bugfix') }}
 
             - name: Build artifacts
               run: ./gradlew build
 
             - name: SonarQube scan
               run: ./gradlew sonarqube
-              if: (!github.ref_name.contains('feature') || !github.ref_name.contains('bugfix'))
+              if: ${{ !contains(github.ref_name,'feature') || !contains(github.ref_name,'bugfix') }}
 
             - name: Archive build folder
               uses: actions/upload-artifact@v2
