@@ -133,7 +133,7 @@ valtimo:
         license:
         licenseUrl:
     connector-encryption:
-        secret: "0123456789101112"
+        secret: ${VALTIMO_CONNECTORENCRYPTION_SECRET}
     plugin:
         encryption-secret: "579156b12b9a457a579156b12b9a457a"
     database: postgres
