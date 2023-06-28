@@ -1,9 +1,7 @@
 package com.ritense.valtimo.digitaalklantdossierauthenticatie.autoconfigure
 
-
 import com.ritense.plugin.service.PluginService
 import com.ritense.valtimo.digitaalklantdossierauthenticatie.DigitaalKlantDossierPluginFactory
-
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
@@ -16,5 +14,4 @@ internal class DigitaalKlantDossierAutoConfiguration {
     ): DigitaalKlantDossierPluginFactory = DigitaalKlantDossierPluginFactory(
         pluginService = pluginService
     )
-
 }
