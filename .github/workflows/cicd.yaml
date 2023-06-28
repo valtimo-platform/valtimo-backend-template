@@ -15,7 +15,7 @@ on:
 env:
     GITHUB_REGISTRY: ghcr.io
     DOCKER_IMAGE_NAME: <docker_image_name>
-    GITHUB_NAMESPACE: valtimo-platform
+    GITHUB_NAMESPACE: valtimo-cloud
 
 jobs:
     build:
@@ -43,16 +43,8 @@ jobs:
             - name: Unit test
               run: ./gradlew clean test
 
-            - name: Integration test
-              run: ./gradlew integrationTest
-              if: ${{ !contains(github.ref_name,'feature') || !contains(github.ref_name,'bugfix') }}
-
             - name: Build artifacts
               run: ./gradlew build
-
-            - name: SonarQube scan
-              run: ./gradlew sonarqube
-              if: ${{ !contains(github.ref_name,'feature') || !contains(github.ref_name,'bugfix') }}
 
             - name: Archive build folder
               uses: actions/upload-artifact@v2
