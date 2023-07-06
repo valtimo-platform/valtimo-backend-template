@@ -16,7 +16,7 @@ logging:
 
 spring:
     profiles:
-        active: ${SPRING_PROFILES_ACTIVE}
+        active: default # or set using envvar SPRING_PROFILES_ACTIVE
     application:
         name: valtimo-backend
     jackson:
@@ -30,10 +30,10 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: org.postgresql.Driver
-        url: ${SPRING_DATASOURCE_URL}
-        name: ${SPRING_DATASOURCE_NAME}
-        username: ${SPRING_DATASOURCE_USERNAME}
-        password: ${SPRING_DATASOURCE_PASSWORD}
+        url: jdbc:postgresql://localhost:5432/valtimo # or set using envvar SPRING_DATASOURCE_URL
+        name: valtimo-ds
+        username: valtimo # or set using envvar SPRING_DATASOURCE_USERNAME
+        password: test123 # or set using envvar SPRING_DATASOURCE_PASSWORD
         hikari:
             poolName: "valtimo-core-pool"
             auto-commit: false
@@ -133,14 +133,20 @@ valtimo:
         license:
         licenseUrl:
     connector-encryption:
-        secret: ${VALTIMO_CONNECTORENCRYPTION_SECRET}
+        secret: valtimo-connector-encryption-default-secret # or set using envvar VALTIMO_CONNECTORENCRYPTION_SECRET
     plugin:
         encryption-secret: "579156b12b9a457a579156b12b9a457a"
     database: postgres
+    web:
+        cors:
+            corsConfiguration:
+                allowedOrigins:
+                allowedMethods:
+                allowedHeaders:
 
 spring-actuator:
     username: admin
-    password: #env var
+    password: iaa5MXkSwcRa9z8zmMm9 # or set using envvar SPRING-ACTUATOR_PASSWORD
 
 audit:
     record:
