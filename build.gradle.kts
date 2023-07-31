@@ -28,8 +28,7 @@ java.targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
-    maven { url = uri("https://repo.ritense.com/repository/maven-public/") }
-    maven { url = uri("https://repo.ritense.com/repository/maven-snapshot/") }
+    maven { url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/") }
 }
 
 val valtimoVersion: String by project
@@ -37,10 +36,12 @@ val valtimoVersion: String by project
 dependencies {
 
     implementation("com.ritense.valtimo:audit:$valtimoVersion")
+    implementation("com.ritense.valtimo:authorization:$valtimoVersion")
     implementation("com.ritense.valtimo:case:$valtimoVersion")
     implementation("com.ritense.valtimo:connector:$valtimoVersion")
     implementation("com.ritense.valtimo:contract:$valtimoVersion")
     implementation("com.ritense.valtimo:core:$valtimoVersion")
+    implementation("com.ritense.valtimo:dashboard:$valtimoVersion")
     implementation("com.ritense.valtimo:document:$valtimoVersion")
     implementation("com.ritense.valtimo:form:$valtimoVersion")
     implementation("com.ritense.valtimo:form-link:$valtimoVersion")
