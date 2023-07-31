@@ -1,7 +1,0 @@
-[
-    {
-        "processDefinitionKey": "erik-process",
-        "canInitializeDocument": true,
-        "startableByUser": true
-    }
-]

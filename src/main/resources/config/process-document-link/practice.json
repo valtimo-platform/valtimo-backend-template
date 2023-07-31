@@ -1,7 +1,0 @@
-[
-    {
-        "processDefinitionKey": "practice-process",
-        "canInitializeDocument": true,
-        "startableByUser": true
-    }
-]
