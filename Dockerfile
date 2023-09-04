@@ -1,4 +1,4 @@
-FROM openjdk:17-bullseye
+FROM openjdk:17.0.2-bullseye
 
 ADD /libs/*.war /app.jar
 
