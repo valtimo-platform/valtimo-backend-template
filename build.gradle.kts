@@ -34,6 +34,7 @@ repositories {
 val valtimoVersion: String by project
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
 
     implementation("com.ritense.valtimo:audit:$valtimoVersion")
     implementation("com.ritense.valtimo:authorization:$valtimoVersion")
