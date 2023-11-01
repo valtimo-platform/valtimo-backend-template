@@ -116,7 +116,6 @@ valtimo:
         base64encoding: false #auth0 client is not base64 encoded
         tokenValidityInSeconds: 3600 # Token is valid 1 hour
         tokenValidityInSecondsForRememberMe: 2592000
-        secret: ${KEYCLOAK_PUBLIC_KEY}
     hardening:
         removeStacktracesFromReturnedExceptions: true
         allowStacktraceOnIps:
@@ -137,6 +136,8 @@ valtimo:
     plugin:
         encryption-secret: "579156b12b9a457a579156b12b9a457a"
     database: postgres
+    oauth:
+        public-key: ${KEYCLOAK_PUBLIC_KEY}
     pbac:
         clear-tables: true
 

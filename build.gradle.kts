@@ -88,12 +88,17 @@ tasks.withType<KotlinCompile> {
     }
 }
 
-apply(from = "gradle/environment.gradle.kts")
-val configureEnvironment = extra["configureEnvironment"] as (task: ProcessForkOptions) -> Unit
-
 tasks.bootRun {
-    val t = this
-    doFirst {
-        configureEnvironment(t)
+    val f = File("${rootProject.projectDir}/.env.properties")
+    if (f.isFile) {
+        f.readLines().forEachIndexed { index, line ->
+            if (line.isNotEmpty() && !line.startsWith("#")) {
+                val pair = line.split("=", limit = 2)
+                if (pair.size != 2) {
+                    project.logger.error("Error in .env.properties on line ${index+1}: '$line'")
+                }
+                this.environment[pair[0]] = pair[1]
+            }
+        }
     }
 }
