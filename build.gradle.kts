@@ -41,6 +41,7 @@ dependencies {
     implementation("com.ritense.valtimo:connector:$valtimoVersion")
     implementation("com.ritense.valtimo:contract:$valtimoVersion")
     implementation("com.ritense.valtimo:core:$valtimoVersion")
+    implementation("com.ritense.valtimo:dashboard:$valtimoVersion")
     implementation("com.ritense.valtimo:document:$valtimoVersion")
     implementation("com.ritense.valtimo:form:$valtimoVersion")
     implementation("com.ritense.valtimo:form-link:$valtimoVersion")
