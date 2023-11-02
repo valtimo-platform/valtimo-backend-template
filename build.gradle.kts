@@ -53,6 +53,7 @@ dependencies {
     implementation("com.ritense.valtimo:local-resource:$valtimoVersion")
     implementation("com.ritense.valtimo:local-mail:$valtimoVersion")
     implementation("com.ritense.valtimo:milestones:$valtimoVersion")
+    implementation("com.ritense.valtimo:notes:$valtimoVersion")
     implementation("com.ritense.valtimo:object-management:$valtimoVersion")
     implementation("com.ritense.valtimo:objecten-api-authentication:$valtimoVersion")
     implementation("com.ritense.valtimo:objecten-api:$valtimoVersion")
