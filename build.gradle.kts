@@ -62,7 +62,7 @@ dependencies {
     implementation("com.ritense.valtimo:test-utils-common:$valtimoVersion")
     implementation("com.ritense.valtimo:zaken-api:$valtimoVersion")
 
-    implementation("org.postgresql:postgresql:42.6.0")
+    implementation("org.postgresql:postgresql:42.7.0")
 
     // Kotlin logger
     implementation("io.github.microutils:kotlin-logging:2.1.21")
