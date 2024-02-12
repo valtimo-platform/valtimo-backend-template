@@ -34,44 +34,32 @@ repositories {
 val valtimoVersion: String by project
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation(platform("com.ritense.valtimo:valtimo-dependency-versions:$valtimoVersion"))
 
-    implementation("com.ritense.valtimo:audit:$valtimoVersion")
-    implementation("com.ritense.valtimo:authorization:$valtimoVersion")
-    implementation("com.ritense.valtimo:case:$valtimoVersion")
-    implementation("com.ritense.valtimo:connector:$valtimoVersion")
-    implementation("com.ritense.valtimo:contract:$valtimoVersion")
-    implementation("com.ritense.valtimo:core:$valtimoVersion")
-    implementation("com.ritense.valtimo:dashboard:$valtimoVersion")
-    implementation("com.ritense.valtimo:document:$valtimoVersion")
-    implementation("com.ritense.valtimo:form:$valtimoVersion")
-    implementation("com.ritense.valtimo:form-link:$valtimoVersion")
-    implementation("com.ritense.valtimo:form-flow:$valtimoVersion")
-    implementation("com.ritense.valtimo:form-flow-valtimo:$valtimoVersion")
-    implementation("com.ritense.valtimo:keycloak-iam:$valtimoVersion")
-    implementation("com.ritense.valtimo:local-document-generation:$valtimoVersion")
-    implementation("com.ritense.valtimo:local-resource:$valtimoVersion")
-    implementation("com.ritense.valtimo:local-mail:$valtimoVersion")
-    implementation("com.ritense.valtimo:milestones:$valtimoVersion")
-    implementation("com.ritense.valtimo:notes:$valtimoVersion")
-    implementation("com.ritense.valtimo:object-management:$valtimoVersion")
-    implementation("com.ritense.valtimo:objecten-api-authentication:$valtimoVersion")
-    implementation("com.ritense.valtimo:objecten-api:$valtimoVersion")
-    implementation("com.ritense.valtimo:objecttypen-api:$valtimoVersion")
-    implementation("com.ritense.valtimo:openzaak:$valtimoVersion")
-    implementation("com.ritense.valtimo:plugin-valtimo:$valtimoVersion")
-    implementation("com.ritense.valtimo:process-document:$valtimoVersion")
-    implementation("com.ritense.valtimo:web:$valtimoVersion")
-    implementation("com.ritense.valtimo:test-utils-common:$valtimoVersion")
-    implementation("com.ritense.valtimo:zaken-api:$valtimoVersion")
+    implementation("com.ritense.valtimo:valtimo-dependencies")
+
+    implementation("com.ritense.valtimo:local-document-generation")
+    implementation("com.ritense.valtimo:local-resource")
+    implementation("com.ritense.valtimo:local-mail")
+    implementation("com.ritense.valtimo:milestones")
+    implementation("com.ritense.valtimo:object-management")
+    implementation("com.ritense.valtimo:objecten-api-authentication")
+    implementation("com.ritense.valtimo:objecten-api")
+    implementation("com.ritense.valtimo:objecttypen-api")
+    implementation("com.ritense.valtimo:openzaak")
+    implementation("com.ritense.valtimo:zaken-api")
 
     implementation("org.postgresql:postgresql:42.6.0")
 
+    if (System.getProperty("os.arch") == "aarch64") {
+        runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.105.Final:osx-aarch_64")
+    }
+
     // Kotlin logger
-    implementation("io.github.microutils:kotlin-logging:2.1.21")
+    implementation("io.github.microutils:kotlin-logging")
 
     // Testing
-    testImplementation("com.ritense.valtimo:test-utils-common:$valtimoVersion")
+    testImplementation("com.ritense.valtimo:test-utils-common")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.camunda.bpm.assert:camunda-bpm-assert:15.0.0")
     testImplementation("org.camunda.bpm.extension:camunda-bpm-junit5:1.1.0")
@@ -89,17 +77,12 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+apply(from = "gradle/environment.gradle.kts")
+val configureEnvironment = extra["configureEnvironment"] as (task: ProcessForkOptions) -> Unit
+
 tasks.bootRun {
-    val f = File("${rootProject.projectDir}/.env.properties")
-    if (f.isFile) {
-        f.readLines().forEachIndexed { index, line ->
-            if (line.isNotEmpty() && !line.startsWith("#")) {
-                val pair = line.split("=", limit = 2)
-                if (pair.size != 2) {
-                    project.logger.error("Error in .env.properties on line ${index+1}: '$line'")
-                }
-                this.environment[pair[0]] = pair[1]
-            }
-        }
+    val t = this
+    doFirst {
+        configureEnvironment(t)
     }
 }

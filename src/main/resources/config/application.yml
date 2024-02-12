@@ -10,6 +10,7 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
+
 logging:
     file:
         name: /tmp/spring.log
@@ -80,10 +81,6 @@ spring:
                     provider_disables_autocommit: true
         hibernate:
             ddl-auto: none
-            naming:
-                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
-            use-new-id-generator-mappings: false
     messages:
         basename: i18n/messages
     main.allow-bean-definition-overriding: true
@@ -112,15 +109,14 @@ valtimo:
     app:
         scheme: http
         hostname: ${VALTIMO_APP_HOSTNAME}
-    jwt:
-        base64encoding: false #auth0 client is not base64 encoded
+    oauth:
         tokenValidityInSeconds: 3600 # Token is valid 1 hour
-        tokenValidityInSecondsForRememberMe: 2592000
+        public-key: ${KEYCLOAK_PUBLIC_KEY}
     hardening:
         removeStacktracesFromReturnedExceptions: true
         allowStacktraceOnIps:
             - "*"
-    swagger:
+    openapi:
         enabled: false
         title: Valtimo Implementation API
         description: Valtimo Implementation API documentation
@@ -136,10 +132,6 @@ valtimo:
     plugin:
         encryption-secret: "579156b12b9a457a579156b12b9a457a"
     database: postgres
-    oauth:
-        public-key: ${KEYCLOAK_PUBLIC_KEY}
-    pbac:
-        clear-tables: true
 
 spring-actuator:
     username: admin
@@ -166,6 +158,9 @@ camunda:
             type: postgres
         history-level: AUDIT
         history-level-default: AUDIT
+        generic-properties:
+            properties:
+                enforceHistoryTimeToLive: false
         admin-user:
             id: Admin
             password: ${CAMUNDA_BPM_ADMIN-USER_PASSWORD}
