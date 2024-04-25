@@ -5,9 +5,9 @@ on:
         branches:
             - 'feature/**'
             - 'bugfix/**'
-    pull_request:
+    pull_request_target:
         branches:
-            - development
+            - 'development'
             - 'rc/**'
             - 'hotfix/**'
     workflow_dispatch:
