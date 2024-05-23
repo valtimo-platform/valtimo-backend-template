@@ -28,6 +28,7 @@ java.targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/") }
     maven { url = uri("https://repo.ritense.com/repository/maven-public/") }
     maven { url = uri("https://repo.ritense.com/repository/maven-snapshot/") }
 }
