@@ -96,7 +96,7 @@ tasks.bootRun {
             if (line.isNotEmpty() && !line.startsWith("#")) {
                 val pair = line.split("=", limit = 2)
                 if (pair.size != 2) {
-                    project.logger.error("Error in .env.properties on line ${index+1}: '$line'")
+                    project.logger.error("Error in .env.properties on line ${index + 1}: '$line'")
                 }
                 this.environment[pair[0]] = pair[1]
             }
