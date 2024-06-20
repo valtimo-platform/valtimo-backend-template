@@ -51,7 +51,7 @@ dependencies {
     implementation("com.ritense.valtimo:openzaak")
     implementation("com.ritense.valtimo:zaken-api")
 
-    implementation("org.postgresql:postgresql:42.6.0")
+    implementation("org.postgresql:postgresql:42.7.3")
 
     if (System.getProperty("os.arch") == "aarch64") {
         runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.105.Final:osx-aarch_64")

@@ -61,7 +61,7 @@ spring:
     liquibase:
         enabled: false
     jpa:
-        database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
         database: postgresql
         show_sql: false
         open-in-view: false
@@ -132,6 +132,13 @@ valtimo:
     plugin:
         encryption-secret: "579156b12b9a457a579156b12b9a457a"
     database: postgres
+    changelog:
+        pbac:
+            clear-tables: true
+    security:
+        whitelist:
+            hosts:
+                - localhost
 
 spring-actuator:
     username: admin
