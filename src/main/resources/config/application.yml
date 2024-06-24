@@ -111,7 +111,7 @@ valtimo:
         hostname: ${VALTIMO_APP_HOSTNAME}
     oauth:
         tokenValidityInSeconds: 3600 # Token is valid 1 hour
-        public-key: ${KEYCLOAK_PUBLIC_KEY}
+        public-key: ${VALTIMO_OAUTH_PUBLIC_KEY}
     hardening:
         removeStacktracesFromReturnedExceptions: true
         allowStacktraceOnIps:
