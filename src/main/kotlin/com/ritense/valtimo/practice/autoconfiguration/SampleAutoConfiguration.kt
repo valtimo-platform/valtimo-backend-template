@@ -8,13 +8,13 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 internal class SampleAutoConfiguration {
-
     @Bean
     fun samplePluginFactory(
         pluginService: PluginService,
-        sampleClient: SampleClient
-    ): SamplePluginFactory = SamplePluginFactory(
-        pluginService = pluginService,
-        sampleClient = sampleClient
-    )
+        sampleClient: SampleClient,
+    ): SamplePluginFactory =
+        SamplePluginFactory(
+            pluginService = pluginService,
+            sampleClient = sampleClient,
+        )
 }

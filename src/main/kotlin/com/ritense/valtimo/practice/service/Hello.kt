@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service
 
 @Service
 class Hello {
-
     fun hello(input: String) {
         println(input)
     }

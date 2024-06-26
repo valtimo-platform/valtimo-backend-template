@@ -38,6 +38,7 @@ fun main(args: Array<String>) {
         |    Active profile(s): [${environment.getProperty("spring.profiles.active")}].
         |    Local URL: [http://127.0.0.1:${environment.getProperty("server.port")}].
         |    External URL: [http://${InetAddress.getLocalHost().hostAddress}:${environment.getProperty("server.port")}]
-        ----------------------------------------------------------""".trimIndent()
+        ----------------------------------------------------------
+        """.trimIndent()
     }
 }

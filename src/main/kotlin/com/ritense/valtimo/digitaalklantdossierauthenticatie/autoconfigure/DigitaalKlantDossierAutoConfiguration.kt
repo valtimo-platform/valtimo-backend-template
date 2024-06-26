@@ -7,11 +7,9 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 internal class DigitaalKlantDossierAutoConfiguration {
-
     @Bean
-    fun digitaalKlantDossierPluginFactory(
-        pluginService: PluginService
-    ): DigitaalKlantDossierPluginFactory = DigitaalKlantDossierPluginFactory(
-        pluginService = pluginService
-    )
+    fun digitaalKlantDossierPluginFactory(pluginService: PluginService): DigitaalKlantDossierPluginFactory =
+        DigitaalKlantDossierPluginFactory(
+            pluginService = pluginService,
+        )
 }
