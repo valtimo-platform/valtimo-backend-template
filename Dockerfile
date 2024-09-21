@@ -1,4 +1,4 @@
-FROM openjdk:17-bullseye
+FROM eclipse-temurin:21-jre-alpine
 
 ADD build/libs/valtimo-backend-template.war /app.jar
 
