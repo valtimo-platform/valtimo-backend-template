@@ -61,7 +61,6 @@ spring:
     liquibase:
         enabled: false
     jpa:
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
         database: postgresql
         show_sql: false
         open-in-view: false
