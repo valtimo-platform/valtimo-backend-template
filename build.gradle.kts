@@ -51,6 +51,8 @@ dependencies {
     implementation("com.ritense.valtimo:openzaak")
     implementation("com.ritense.valtimo:zaken-api")
 
+    implementation("org.kohsuke:github-api:1.324")
+
     implementation("org.postgresql:postgresql:42.7.3")
 
     if (System.getProperty("os.arch") == "aarch64") {
