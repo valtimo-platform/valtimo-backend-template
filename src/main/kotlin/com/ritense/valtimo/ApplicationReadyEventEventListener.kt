@@ -6,6 +6,7 @@ import com.ritense.form.autodeployment.FormDefinitionDeploymentService
 import mu.KotlinLogging
 import org.kohsuke.github.GitHub
 import org.kohsuke.github.GitHubBuilder
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Service
@@ -13,13 +14,14 @@ import org.springframework.stereotype.Service
 @Service
 class ApplicationReadyEventEventListener(
     val formDefinitionDeploymentService: FormDefinitionDeploymentService,
-    val jsonSchemaDocumentDefinitionService: JsonSchemaDocumentDefinitionService
+    val jsonSchemaDocumentDefinitionService: JsonSchemaDocumentDefinitionService,
+    @Value("\${repo}") val repo: String
 ) {
 
     @EventListener(ApplicationReadyEvent::class)
     fun handle(event: ApplicationReadyEvent) {
         val gitHub: GitHub = GitHubBuilder().build()
-        val repository = gitHub.getRepository("valtimo-platform/config-poc-maarten")
+        val repository = gitHub.getRepository(repo)
         val formDirectory = repository.getDirectoryContent("/resources/config/form")
         formDirectory.listIterator().forEach {
             logger.info { "${it.name}" }
