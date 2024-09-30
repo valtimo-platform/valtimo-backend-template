@@ -80,7 +80,7 @@ class ApplicationReadyEventEventListener(
             val form = repository.getFileContent(it.path)
             logger.info { "File content ${form.content}" }
             AuthorizationContext.runWithoutAuthorization {
-                formDefinitionDeploymentService.deploy(it.name, form.content, false)
+                formDefinitionDeploymentService.deploy(it.name.removeSuffix(".json"), form.content, false)
             }
         }
 
