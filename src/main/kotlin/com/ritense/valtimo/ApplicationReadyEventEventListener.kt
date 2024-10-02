@@ -7,6 +7,7 @@ import com.ritense.form.autodeployment.FormDefinitionDeploymentService
 import com.ritense.form.domain.event.FormCreatedEvent
 import com.ritense.form.domain.event.FormUpdatedEvent
 import com.ritense.valtimo.contract.utils.SecurityUtils
+import com.ritense.valtimo.service.CamundaProcessService
 import mu.KotlinLogging
 import org.kohsuke.github.GHRepository
 import org.kohsuke.github.GitHub
@@ -15,11 +16,13 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.context.event.ApplicationReadyEvent
 import org.springframework.context.event.EventListener
 import org.springframework.stereotype.Service
+import java.io.ByteArrayInputStream
 
 @Service
 class ApplicationReadyEventEventListener(
     val formDefinitionDeploymentService: FormDefinitionDeploymentService,
     val jsonSchemaDocumentDefinitionService: JsonSchemaDocumentDefinitionService,
+    val camundaProcessService: CamundaProcessService,
     @Value("\${REPO}") val repo: String,
     @Value("\${OAUTHTOKEN}") val oAuthToken: String
 ) {
@@ -91,6 +94,16 @@ class ApplicationReadyEventEventListener(
             logger.info { "File content ${documentDefinition.content}" }
             AuthorizationContext.runWithoutAuthorization {
                 jsonSchemaDocumentDefinitionService.deploy(documentDefinition.content)
+            }
+        }
+
+        val bpmnDirectory = repository.getDirectoryContent("resources/bpmn")
+        bpmnDirectory.listIterator().forEach {
+            val bpmn = repository.getFileContent(it.path)
+            logger.info { "${it.name}" }
+            logger.info { "File content ${bpmn.name}" }
+            AuthorizationContext.runWithoutAuthorization {
+                camundaProcessService.deploy(bpmn.name, ByteArrayInputStream(bpmn.content.encodeToByteArray()))
             }
         }
     }
