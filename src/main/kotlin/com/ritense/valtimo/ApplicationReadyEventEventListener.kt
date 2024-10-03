@@ -6,9 +6,11 @@ import com.ritense.document.service.impl.JsonSchemaDocumentDefinitionService
 import com.ritense.form.autodeployment.FormDefinitionDeploymentService
 import com.ritense.form.domain.event.FormCreatedEvent
 import com.ritense.form.domain.event.FormUpdatedEvent
+import com.ritense.processdocument.service.ProcessDocumentDeploymentService
 import com.ritense.valtimo.contract.utils.SecurityUtils
 import com.ritense.valtimo.service.CamundaProcessService
 import mu.KotlinLogging
+import org.kohsuke.github.GHFileNotFoundException
 import org.kohsuke.github.GHRepository
 import org.kohsuke.github.GitHub
 import org.kohsuke.github.GitHubBuilder
@@ -22,6 +24,7 @@ import java.io.ByteArrayInputStream
 class ApplicationReadyEventEventListener(
     val formDefinitionDeploymentService: FormDefinitionDeploymentService,
     val jsonSchemaDocumentDefinitionService: JsonSchemaDocumentDefinitionService,
+    val processDocumentDeploymentService: ProcessDocumentDeploymentService,
     val camundaProcessService: CamundaProcessService,
     @Value("\${REPO}") val repo: String,
     @Value("\${OAUTHTOKEN}") val oAuthToken: String
@@ -77,34 +80,72 @@ class ApplicationReadyEventEventListener(
 
     @EventListener(ApplicationReadyEvent::class)
     fun handle(event: ApplicationReadyEvent) {
-        val formDirectory = repository.getDirectoryContent("resources/config/form")
-        formDirectory.listIterator().forEach {
-            logger.info { "${it.name}" }
-            val form = repository.getFileContent(it.path)
-            logger.info { "File content ${form.content}" }
-            AuthorizationContext.runWithoutAuthorization {
-                formDefinitionDeploymentService.deploy(it.name.removeSuffix(".json"), form.content, false)
+
+        try {
+            val formDirectory = repository.getDirectoryContent("resources/config/form")
+            formDirectory.listIterator().forEach {
+                if (it.name != ".gitkeep") {
+                    logger.info { "${it.name}" }
+                    val form = repository.getFileContent(it.path)
+                    logger.info { "File content ${form.content}" }
+                    AuthorizationContext.runWithoutAuthorization {
+                        formDefinitionDeploymentService.deploy(it.name.removeSuffix(".json"), form.content, false)
+                    }
+                }
             }
+        } catch (ex: GHFileNotFoundException) {
+            //ignore
         }
 
-        val caseDefinitionDirectory = repository.getDirectoryContent("resources/config/document/definition")
-        caseDefinitionDirectory.listIterator().forEach {
-            val documentDefinition = repository.getFileContent(it.path)
-            logger.info { "${it.name}" }
-            logger.info { "File content ${documentDefinition.content}" }
-            AuthorizationContext.runWithoutAuthorization {
-                jsonSchemaDocumentDefinitionService.deploy(documentDefinition.content)
+        try {
+            val caseDefinitionDirectory = repository.getDirectoryContent("resources/config/document/definition")
+            caseDefinitionDirectory.listIterator().forEach {
+                if (it.name != ".gitkeep") {
+                    val documentDefinition = repository.getFileContent(it.path)
+                    logger.info { "${it.name}" }
+                    logger.info { "File content ${documentDefinition.content}" }
+                    AuthorizationContext.runWithoutAuthorization {
+                        jsonSchemaDocumentDefinitionService.deploy(documentDefinition.content)
+                    }
+                }
             }
+        } catch (ex: GHFileNotFoundException) {
+            //ignore
         }
 
-        val bpmnDirectory = repository.getDirectoryContent("resources/bpmn")
-        bpmnDirectory.listIterator().forEach {
-            val bpmn = repository.getFileContent(it.path)
-            logger.info { "${it.name}" }
-            logger.info { "File content ${bpmn.name}" }
-            AuthorizationContext.runWithoutAuthorization {
-                camundaProcessService.deploy(bpmn.name, ByteArrayInputStream(bpmn.content.encodeToByteArray()))
+        try {
+            val bpmnDirectory = repository.getDirectoryContent("resources/bpmn")
+            bpmnDirectory.listIterator().forEach {
+                if (it.name != ".gitkeep") {
+                    val bpmn = repository.getFileContent(it.path)
+                    logger.info { "${it.name}" }
+                    logger.info { "File content ${bpmn.name}" }
+                    AuthorizationContext.runWithoutAuthorization {
+                        camundaProcessService.deploy(bpmn.name, ByteArrayInputStream(bpmn.content.encodeToByteArray()))
+                    }
+                }
             }
+        } catch (ex: GHFileNotFoundException) {
+            //ignore
+        }
+
+        try {
+            val caseDefinitionLinkDirectory = repository.getDirectoryContent("resources/config/process-document-link")
+            caseDefinitionLinkDirectory.listIterator().forEach {
+                if (it.name != ".gitkeep") {
+                    val caseDefinitionLink = repository.getFileContent(it.path)
+                    logger.info { "${it.name}" }
+                    logger.info { "File content ${caseDefinitionLink.content}" }
+                    AuthorizationContext.runWithoutAuthorization {
+                        processDocumentDeploymentService.deploy(
+                            it.name.substringBefore("."),
+                            caseDefinitionLink.content
+                        )
+                    }
+                }
+            }
+        } catch (ex: GHFileNotFoundException) {
+            //ignore
         }
     }
 
