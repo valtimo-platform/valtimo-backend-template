@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:17-jre-noble
 
 ADD build/libs/valtimo-backend-template.war /app.jar
 
