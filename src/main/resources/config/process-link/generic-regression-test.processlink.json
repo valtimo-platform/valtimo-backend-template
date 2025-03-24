@@ -1,0 +1,32 @@
+[
+    {
+        "activityId": "StartEvent_1",
+        "activityType": "bpmn:StartEvent:start",
+        "processLinkType": "form",
+        "formDefinitionName": "generic-regression-test.start"
+    },
+    {
+        "activityId": "BeoordelenLoondienstTask",
+        "activityType": "bpmn:UserTask:create",
+        "processLinkType": "form",
+        "formDefinitionName": "generic-regression-test.beoordelen-loondienst"
+    },
+    {
+        "activityId": "BeoordelenMedebewonersTask",
+        "activityType": "bpmn:UserTask:create",
+        "processLinkType": "form",
+        "formDefinitionName": "generic-regression-test.beoordelen-medebewoners"
+    },
+    {
+        "activityId": "BeoordelenOndernemingTask",
+        "activityType": "bpmn:UserTask:create",
+        "processLinkType": "form",
+        "formDefinitionName": "generic-regression-test.beoordelen-ondernemingen"
+    },
+    {
+        "activityId": "OpvragenInformatieTask",
+        "activityType": "bpmn:UserTask:create",
+        "processLinkType": "form",
+        "formDefinitionName": "generic-regression-test.opvragen-informatie"
+    }
+]

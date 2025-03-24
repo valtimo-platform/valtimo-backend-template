@@ -1,0 +1,885 @@
+{
+    "$id": "generic-regression-test.schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generic Regression Test",
+    "type": "object",
+    "properties": {
+        "gegevensVanuitAanvraag": {
+            "type": "object",
+            "properties": {
+                "startDatum": {
+                    "type": "string"
+                },
+                "persoon": {
+                    "type": "object",
+                    "properties": {
+                        "bsn": {
+                            "type": "string"
+                        },
+                        "voornamen": {
+                            "type": "string"
+                        },
+                        "achternaam": {
+                            "type": "string"
+                        },
+                        "voorletters": {
+                            "type": "string"
+                        },
+                        "voorvoegsel": {
+                            "type": "string"
+                        },
+                        "geboortedatum": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "medebewoners": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "voorletters": {
+                                "type": "string"
+                            },
+                            "voornamen": {
+                                "type": "string"
+                            },
+                            "voorvoegsel": {
+                                "type": "string"
+                            },
+                            "achternaam": {
+                                "type": "string"
+                            },
+                            "volledigeNaam": {
+                                "type": "string"
+                            },
+                            "geboortedatum": {
+                                "type": "string"
+                            },
+                            "bsn": {
+                                "type": "string"
+                            },
+                            "volgtOpleiding": {
+                                "type": "boolean"
+                            },
+                            "soortOpleiding": {
+                                "$ref": "#/definitions/opleidingen"
+                            },
+                            "omschrijvingVolgtOpleiding": {
+                                "type": "string"
+                            },
+                            "volgtBblTraject": {
+                                "type": "string"
+                            },
+                            "soortBblTraject": {
+                                "type": "string"
+                            },
+                            "relatieMedebewoner": {
+                                "$ref": "#/definitions/relatieTotMedebewoner"
+                            },
+                            "toelichtingRelatieTotMedebewoner": {
+                                "type": "string"
+                            },
+                            "samenlevingsvorm": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/samenlevingsvorm"
+                                }
+                            },
+                            "gezamenlijkHuishouden": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/gezamenlijkHuishouden"
+                                }
+                            },
+                            "gezamenlijkTijdsbesteding": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/gezamenlijkTijdsbesteding"
+                                }
+                            },
+                            "teOntvangenHuur": {
+                                "type": "number"
+                            },
+                            "frequentieOntvangenHuur": {
+                                "$ref": "#/definitions/cdUitkeringsperiode"
+                            },
+                            "gezamenlijkeTijdsbesteding": {
+                                "type": "string"
+                            },
+                            "medebewonerVolgtOpleiding": {
+                                "type": "string"
+                            },
+                            "gezamelijkeHuishouding": {
+                                "type": "string",
+                                "enum": [
+                                    "JA",
+                                    "NEE",
+                                    "ONBEKEND"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "ondernemingen": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "kvkRegistratie": {
+                                "type": "object",
+                                "$ref": "#/definitions/kvk-registratie"
+                            },
+                            "directeurOfGrootaandeelhouder": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "alleDiplomasEnVergunningen": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "faillissementVerklaardOfAangevraagd": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "uitstelVanBetalingAangevraagd": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "lopendeWerkzaamhedenOfVerplichtingen": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "stoppenOnderneming": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "redenStoppenOnderneming": {
+                                "type": "string"
+                            },
+                            "datumVestiging": {
+                                "type": "string"
+                            },
+                            "adresToevoegen": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "adressen": {
+                                "type": "array",
+                                "items": {
+                                    "typeAdres": {
+                                        "$ref": "#/definitions/typeAdres"
+                                    },
+                                    "adres": {
+                                        "$ref": "#/definitions/adres"
+                                    }
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "inkomstenAanvrager": {
+                    "type": "object",
+                    "properties": {
+                        "loondienst": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/loondienst"
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "tienJaarLoondienstOfDrieJaarZelfstandig": {
+                    "$ref": "#/definitions/radioButtons"
+                }
+            },
+            "additionalProperties": false
+        },
+        "gegevensBeoordeling": {
+            "type": "object",
+            "properties": {
+                "startDatum": {
+                    "type": "string"
+                },
+                "persoon": {
+                    "type": "object",
+                    "properties": {
+                        "bsn": {
+                            "type": "string"
+                        },
+                        "voornamen": {
+                            "type": "string"
+                        },
+                        "achternaam": {
+                            "type": "string"
+                        },
+                        "voorletters": {
+                            "type": "string"
+                        },
+                        "voorvoegsel": {
+                            "type": "string"
+                        },
+                        "geboortedatum": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "medebewoners": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "voorletters": {
+                                "type": "string"
+                            },
+                            "voornamen": {
+                                "type": "string"
+                            },
+                            "voorvoegsel": {
+                                "type": "string"
+                            },
+                            "achternaam": {
+                                "type": "string"
+                            },
+                            "volledigeNaam": {
+                                "type": "string"
+                            },
+                            "geboortedatum": {
+                                "type": "string"
+                            },
+                            "bsn": {
+                                "type": "string"
+                            },
+                            "volgtOpleiding": {
+                                "type": "boolean"
+                            },
+                            "soortOpleiding": {
+                                "$ref": "#/definitions/opleidingen"
+                            },
+                            "omschrijvingVolgtOpleiding": {
+                                "type": "string"
+                            },
+                            "volgtBblTraject": {
+                                "type": "string"
+                            },
+                            "soortBblTraject": {
+                                "type": "string"
+                            },
+                            "relatieMedebewoner": {
+                                "$ref": "#/definitions/relatieTotMedebewoner"
+                            },
+                            "toelichtingRelatieTotMedebewoner": {
+                                "type": "string"
+                            },
+                            "samenlevingsvorm": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/samenlevingsvorm"
+                                }
+                            },
+                            "gezamenlijkHuishouden": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/gezamenlijkHuishouden"
+                                }
+                            },
+                            "gezamenlijkTijdsbesteding": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/gezamenlijkTijdsbesteding"
+                                }
+                            },
+                            "teOntvangenHuur": {
+                                "type": "number"
+                            },
+                            "frequentieOntvangenHuur": {
+                                "$ref": "#/definitions/cdUitkeringsperiode"
+                            },
+                            "gezamenlijkeTijdsbesteding": {
+                                "type": "string"
+                            },
+                            "medebewonerVolgtOpleiding": {
+                                "type": "string"
+                            },
+                            "gezamelijkeHuishouding": {
+                                "type": "string",
+                                "enum": [
+                                    "JA",
+                                    "NEE",
+                                    "ONBEKEND"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "ondernemingen": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "kvkRegistratie": {
+                                "type": "object",
+                                "$ref": "#/definitions/kvk-registratie"
+                            },
+                            "directeurOfGrootaandeelhouder": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "alleDiplomasEnVergunningen": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "faillissementVerklaardOfAangevraagd": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "uitstelVanBetalingAangevraagd": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "lopendeWerkzaamhedenOfVerplichtingen": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "stoppenOnderneming": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "redenStoppenOnderneming": {
+                                "type": "string"
+                            },
+                            "datumVestiging": {
+                                "type": "string"
+                            },
+                            "adresToevoegen": {
+                                "$ref": "#/definitions/radioButtons"
+                            },
+                            "adressen": {
+                                "type": "array",
+                                "items": {
+                                    "typeAdres": {
+                                        "$ref": "#/definitions/typeAdres"
+                                    },
+                                    "adres": {
+                                        "$ref": "#/definitions/adres"
+                                    }
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "inkomstenAanvrager": {
+                    "type": "object",
+                    "properties": {
+                        "loondienst": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/loondienst"
+                            }
+                        },
+                        "loondienstToelichting": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "tienJaarLoondienstOfDrieJaarZelfstandig": {
+                    "$ref": "#/definitions/radioButtons"
+                }
+            },
+            "additionalProperties": false
+        },
+        "informatieverzoeken": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/informatieverzoek"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "stdIndJN": {
+            "type": "object",
+            "enum": [
+                {
+                    "code": "1",
+                    "name": "Ja"
+                },
+                {
+                    "code": "2",
+                    "name": "Nee"
+                }
+            ]
+        },
+        "cdUitkeringsperiode": {
+            "type": "object",
+            "enum": [
+                {
+                    "code": "0",
+                    "name": "Niet van toepassing"
+                },
+                {
+                    "code": "1",
+                    "name": "Dag"
+                },
+                {
+                    "code": "2",
+                    "name": "Week"
+                },
+                {
+                    "code": "3",
+                    "name": "2 weken"
+                },
+                {
+                    "code": "4",
+                    "name": "4 weken (13 maanden)"
+                },
+                {
+                    "code": "5",
+                    "name": "5 weken"
+                },
+                {
+                    "code": "6",
+                    "name": "Maand"
+                },
+                {
+                    "code": "7",
+                    "name": "Kwartaal"
+                },
+                {
+                    "code": "8",
+                    "name": "Jaar"
+                },
+                {
+                    "code": "9",
+                    "name": "Eenmalig"
+                }
+            ]
+        },
+        "relatieTotMedebewoner": {
+            "type": "string",
+            "enum": [
+                "OUDERS",
+                "SCHOONOUDERS",
+                "OPA_OMA_BROER_ZUS",
+                "KAMER_VERHUUR",
+                "KAMER_HUUR",
+                "GEEN_RELATIE"
+            ]
+        },
+        "samenlevingsvorm": {
+            "type": "object",
+            "enum": [
+                {
+                    "code": "GEHUWD_PARTNER",
+                    "name": "Wij zijn in de afgelopen 2 jaar gehuwd (of geregistreerd partner) geweest"
+                },
+                {
+                    "code": "SAMEN_KIND",
+                    "name": "Wij hebben samen een kind (of een erkend kind)"
+                },
+                {
+                    "code": "SAMENLEVINGSCONTRACT",
+                    "name": "Wij hebben een samenlevingscontract"
+                },
+                {
+                    "code": "HUISHOUDEN_OVERHEID",
+                    "name": "Wij worden of werden, in de afgelopen 2 jaar, als 1 huishouden gezien door een overheidsinstantie (zoals de Belastingdienst)"
+                },
+                {
+                    "code": "GEEN_RELATIE",
+                    "name": "Wij zijn in de afgelopen 2 jaar niet gehuwd of geregistreerd partner geweest, wij hebben samen geen(erkend) kind, wij hebben geen samenlevingscontract, wij worden of werden (in de afgelopen 2 jaar) niet gezien als 1 huishouden door een overheidsinstantie"
+                }
+            ]
+        },
+        "gezamenlijkHuishouden": {
+            "type": "object",
+            "enum": [
+                {
+                    "code": "DELEN_HUUR",
+                    "name": "Wij delen de kosten van de huur"
+                },
+                {
+                    "code": "DELEN_VASTE_LASTEN",
+                    "name": "Wij delen de vaste lasten, zoals gas en water"
+                },
+                {
+                    "code": "DELEN_BOODSCHAPPEN",
+                    "name": "Wij delen de kosten van de boodschappen"
+                },
+                {
+                    "code": "NIET_DELEN",
+                    "name": "Wij delen niet de kosten van de huur, de vaste lasten (zoals gas en water) of de kosten van de boodschappen"
+                }
+            ]
+        },
+        "gezamenlijkTijdsbesteding": {
+            "type": "object",
+            "enum": [
+                {
+                    "code": "ETEN_SAMEN",
+                    "name": "Wij eten samen"
+                },
+                {
+                    "code": "VAKANTIE_SAMEN",
+                    "name": "Wij gaan samen op vakantie"
+                },
+                {
+                    "code": "TAKEN_VERDELEN",
+                    "name": "Wij verdelen, of doen samen de taken in het huishouden"
+                },
+                {
+                    "code": "NIET_SAMEN",
+                    "name": "Wij eten niet samen, gaan niet samen op vakantie en verdelen geen taken in het huishouden"
+                }
+            ]
+        },
+        "opleidingen": {
+            "type": "string",
+            "enum": [
+                "BASISSCHOOL",
+                "VMBO",
+                "HAVO_VWO",
+                "MBO",
+                "HBO",
+                "WO",
+                "GEEN_OPLEIDING",
+                "ANDERS",
+                ""
+            ]
+        },
+        "kvk-registratie": {
+            "type": "object",
+            "properties": {
+                "kvkInschrijfnummer": {
+                    "type": "string"
+                },
+                "naamOnderneming": {
+                    "type": "string"
+                },
+                "datumInschrijving": {
+                    "type": "string"
+                },
+                "omschrijvingActiviteiten": {
+                    "type": "string"
+                },
+                "rechtsvorm": {
+                    "type": "string",
+                    "enum": [
+                        "EENMANSZAAK_ZZP",
+                        "VENNOOTSCHAP_ONDER_FIRMA_VOF",
+                        "COMMANDITAIRE_VENNOOTSCHAP_CV",
+                        "BESLOTEN_VENNOOTSCHAP_BV",
+                        "MAATSCHAP",
+                        "STICHTING_MET_WINSTOOGMERK",
+                        "ONBEKEND"
+                    ]
+                },
+                "aantalVennoten": {
+                    "type": "number"
+                }
+            }
+        },
+        "radioButtons": {
+            "type": "string",
+            "enum": [
+                "JA",
+                "NEE",
+                "NVT",
+                "ONBEKEND"
+            ]
+        },
+        "typeAdres": {
+            "type": "string",
+            "enum": [
+                "hoofdadres",
+                "locatieadres"
+            ]
+        },
+        "adres": {
+            "type": "object",
+            "properties": {
+                "straatnaam": {
+                    "type": "string"
+                },
+                "huisnummer": {
+                    "type": "number"
+                },
+                "huisletter": {
+                    "type": "string"
+                },
+                "huisnummertoevoeging": {
+                    "type": "string"
+                },
+                "postcode": {
+                    "type": "string"
+                },
+                "woonplaatsnaam": {
+                    "type": "string"
+                },
+                "aanduidingBijHuisnummer": {
+                    "type": "string"
+                },
+                "locatieomschrijving": {
+                    "type": "string"
+                }
+            }
+        },
+        "loondienst": {
+            "type": "object",
+            "properties": {
+                "bedrijfsNaam": {
+                    "type": "string"
+                },
+                "nettoLoon": {
+                    "type": "number"
+                },
+                "periodiciteitUitbetalingLoon": {
+                    "$ref": "#/definitions/cdUitkeringsperiode"
+                },
+                "loonheffingskorting": {
+                    "$ref": "#/definitions/stdIndJN"
+                },
+                "additioneleVergoedingen": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "enum": [
+                            {
+                                "code": "VAKANTIEGELD_PER_JAAR",
+                                "name": "1 keer per jaar vakantiegeld"
+                            },
+                            {
+                                "code": "VAKANTIEGELD_IEDERE_UITBETALING",
+                                "name": "Vakantiegeld bij iedere uitbetaling van mijn salaris (dus niet 1 keer per jaar)"
+                            },
+                            {
+                                "code": "DERTIENDE_MAAND_EINDEJAARSUITKERING",
+                                "name": "Een 13de maand of eindejaarsuitkering"
+                            },
+                            {
+                                "code": "REISKOSTENVERGOEDING",
+                                "name": "Reiskostenvergoeding"
+                            },
+                            {
+                                "code": "ONKOSTENVERGOEDING",
+                                "name": "Onkostenvergoeding"
+                            },
+                            {
+                                "code": "MAALTIJDVERGOEDING",
+                                "name": "Maaltijdvergoeding"
+                            },
+                            {
+                                "code": "NATURA",
+                                "name": "Loon in natura (zoals eten of middelen)"
+                            },
+                            {
+                                "code": "GEEN",
+                                "name": "Aanvrager ontvangt geen vakantiegeld 1 keer per jaar, geen 13de maand of eindejaarsuitkering, geen reiskostenvergoeding, geen onkostenvergoeding, geen maaltijdvergoeding, geen loon in natura, geen vakantiegeld bij iedere uitbetaling van mijn salaris"
+                            }
+                        ]
+                    }
+                },
+                "waardeLoonInNatura": {
+                    "type": "number"
+                },
+                "maaltijdvergoeding": {
+                    "type": "number"
+                },
+                "onkostenvergoeding": {
+                    "type": "number"
+                },
+                "reiskostenvergoeding": {
+                    "type": "number"
+                },
+                "soortContract": {
+                    "type": "object",
+                    "enum": [
+                        {
+                            "code": "1",
+                            "name": "Vast contract"
+                        },
+                        {
+                            "code": "2",
+                            "name": "Voor bepaalde tijd"
+                        },
+                        {
+                            "code": "3",
+                            "name": "Op oproepbasis"
+                        },
+                        {
+                            "code": "4",
+                            "name": "Uitzendbureau"
+                        },
+                        {
+                            "code": "5",
+                            "name": "0-uren contract"
+                        }
+                    ]
+                },
+                "aantalUurPerWeek": {
+                    "type": "number"
+                },
+                "urenvermindering": {
+                    "$ref": "#/definitions/stdIndJN"
+                },
+                "contractBinnenkortBeeindigd": {
+                    "$ref": "#/definitions/stdIndJN"
+                },
+                "einddatumContract": {
+                    "type": "string"
+                },
+                "toelichting": {
+                    "type": "string"
+                }
+            }
+        },
+        "informatieverzoek": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "verzoek": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "verwerkerTaakId": {
+                            "type": "string"
+                        },
+                        "opTeVragenInformatie": {
+                            "type": [
+                                "array",
+                                "null"
+                            ],
+                            "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "informatieverzoekItem": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "categorie": {
+                                                "type": [
+                                                    "array"
+                                                ],
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "dossierType": {
+                                                "type": [
+                                                    "array"
+                                                ],
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "code": {
+                                                "type": "string"
+                                            },
+                                            "infomatieobjecttypeUrl": {
+                                                "type": "string"
+                                            },
+                                            "omschrijvingAanvrager": {
+                                                "type": "string"
+                                            },
+                                            "omschrijvingBehandelaar": {
+                                                "type": "string"
+                                            },
+                                            "toelichting": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "toelichtingBehandelaar": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "documenten": {
+                            "type": [
+                                "array",
+                                "null"
+                            ]
+                        },
+                        "berichtNaarAanvrager": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "datumUitgezet": {
+                            "type": "string"
+                        },
+                        "deadlineInformatieverzoek": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "uitgezetDoor": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "hersteltermijn": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "enum": [
+                                "JA",
+                                "NEE"
+                            ]
+                        },
+                        "hersteltermijnInDagen": {
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        }
+                    }
+                },
+                "reactie": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "ontvangenPortaalBestanden": {
+                            "type": [
+                                "array",
+                                "null"
+                            ]
+                        },
+                        "toelichting": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "reactiedatum": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "informatieverzoekIsAfgerond": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "enum": [
+                                "JA",
+                                "NEE"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

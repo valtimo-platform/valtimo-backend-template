@@ -1,0 +1,7 @@
+[
+    {
+        "processDefinitionKey": "generic-regression-test",
+        "canInitializeDocument": true,
+        "startableByUser": false
+    }
+]

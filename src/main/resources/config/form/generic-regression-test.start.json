@@ -1,0 +1,1302 @@
+{
+    "display": "form",
+    "components": [
+        {
+            "label": "gegevensVanuitAanvraag",
+            "customDefaultValue": "value = {\n  \"persoon\": {\n        \"voorletters\": \"J\",\n        \"voornamen\": \"Joost\",\n        \"voorvoegsel\": \"de\",\n        \"achternaam\": \"Boer\",\n        \"geboortedatum\": \"1979-03-17T00:00:00+02:00\",\n        \"bsn\": \"323323236\"\n      },\n  \"inkomstenAanvrager\": {\n                        \"loondienst\": [\n                          {\n                            \"bedrijfsNaam\": \"TEST Werkgever\",\n                            \"periodiciteitUitbetalingLoon\": {\n                              \"code\": \"6\",\n                              \"name\": \"Maand\"\n                            },\n                            \"loonheffingskorting\": {\n                              \"code\": \"1\",\n                              \"name\": \"Ja\"\n                            },\n                            \"additioneleVergoedingen\": [\n                              {\n                                \"code\": \"VAKANTIEGELD_IEDERE_UITBETALING\",\n                                \"name\": \"Vakantiegeld bij iedere uitbetaling van mijn salaris (dus niet 1 keer per jaar)\"\n                              },\n                              {\n                                \"code\": \"MAALTIJDVERGOEDING\",\n                                \"name\": \"Maaltijdvergoeding\"\n                              },\n                              {\n                                \"code\": \"VAKANTIEGELD_PER_JAAR\",\n                                \"name\": \"1 keer per jaar vakantiegeld\"\n                              },\n                              {\n                                \"code\": \"DERTIENDE_MAAND_EINDEJAARSUITKERING\",\n                                \"name\": \"Een 13de maand of eindejaarsuitkering\"\n                              },\n                              {\n                                \"code\": \"REISKOSTENVERGOEDING\",\n                                \"name\": \"Reiskostenvergoeding\"\n                              },\n                              {\n                                \"code\": \"ONKOSTENVERGOEDING\",\n                                \"name\": \"Onkostenvergoeding\"\n                              },\n                              {\n                                \"code\": \"NATURA\",\n                                \"name\": \"Loon in natura (zoals eten of middelen)\"\n                              },\n                              {\n                                \"code\": \"GEEN\",\n                                \"name\": \"Aanvrager ontvangt geen vakantiegeld 1 keer per jaar, geen 13de maand of eindejaarsuitkering, geen reiskostenvergoeding, geen onkostenvergoeding, geen maaltijdvergoeding, geen loon in natura, geen vakantiegeld bij iedere uitbetaling van mijn salaris\"\n                              }\n                            ],\n                            \"soortContract\": {\n                              \"code\": \"5\",\n                              \"name\": \"0-uren contract\"\n                            },\n                            \"urenvermindering\": {\n                              \"code\": \"1\",\n                              \"name\": \"Ja\"\n                            },\n                            \"contractBinnenkortBeeindigd\": {\n                              \"code\": \"1\",\n                              \"name\": \"Ja\"\n                            },\n                            \"einddatumContract\": \"2025-03-31T00:00:00+02:00\",\n                            \"aantalUurPerWeek\": 12,\n                            \"maaltijdvergoeding\": 123,\n                            \"waardeLoonInNatura\": 123,\n                            \"onkostenvergoeding\": 321,\n                            \"reiskostenvergoeding\": 123,\n                            \"nettoLoon\": 1233\n                          }\n                        ]\n                      },\n                    \"medebewoners\": [\n                        {\n                          \"voorletters\": \"J\",\n                          \"voornamen\": \"Jan\",\n                          \"voorvoegsel\": \"de\",\n                          \"achternaam\": \"Boer\",\n                          \"geboortedatum\": \"2000-03-17T00:00:00+02:00\",\n                          \"relatieMedebewoner\": \"OPA_OMA_BROER_ZUS\",\n                          \"samenlevingsvorm\": [],\n                          \"gezamenlijkHuishouden\": [],\n                          \"gezamelijkeHuishouding\": \"JA\",\n                          \"volgtOpleiding\": false,\n                          \"bsn\": \"111111110\",\n                          \"volgtBblTraject\": \"JA\",\n                          \"soortBblTraject\": \"Boer\"\n                        },\n                        {\n                          \"voorletters\": \"K\",\n                          \"voornamen\": \"Kees\",\n                          \"voorvoegsel\": \"de\",\n                          \"achternaam\": \"Boer\",\n                          \"geboortedatum\": \"2001-09-12T00:00:00+02:00\",\n                          \"relatieMedebewoner\": \"OPA_OMA_BROER_ZUS\",\n                          \"gezamelijkeHuishouding\": \"NEE\",\n                          \"volgtOpleiding\": true,\n                          \"bsn\": \"222222220\",\n                          \"soortOpleiding\": \"HBO\"\n                        }\n                        ],\n                    \"ondernemingen\": [\n                        {\n                          \"kvkRegistratie\": {\n                            \"kvkInschrijfnummer\": \"1234567890\",\n                            \"naamOnderneming\": \"Boerderij de Boer\",\n                            \"datumInschrijving\": \"2000-03-17T00:00:00+02:00\",\n                            \"omschrijvingActiviteiten\": \"Boer\",\n                            \"rechtsvorm\": \"ONBEKEND\"\n                          },\n                          \"directeurOfGrootaandeelhouder\": \"ONBEKEND\",\n                          \"alleDiplomasEnVergunningen\": \"JA\",\n                          \"faillissementVerklaardOfAangevraagd\": \"NEE\",\n                          \"uitstelVanBetalingAangevraagd\": \"NEE\",\n                          \"stoppenOnderneming\": \"NEE\",\n                          \"redenStoppenOnderneming\": \"\",\n                          \"datumVestiging\": \"1968-03-17T00:00:00+02:00\",\n                          \"adresToevoegen\": \"NEE\"\n                        },\n                        {\n                          \"kvkRegistratie\": {\n                            \"kvkInschrijfnummer\": \"1231231231\",\n                            \"naamOnderneming\": \"Trekkershop\",\n                            \"datumInschrijving\": \"2018-03-17T00:00:00+02:00\",\n                            \"omschrijvingActiviteiten\": \"Wij verkopen traktor accesoires\",\n                            \"rechtsvorm\": \"BESLOTEN_VENNOOTSCHAP_BV\"\n                          },\n                          \"datumVestiging\": \"2018-03-17T00:00:00+02:00\",\n                          \"alleDiplomasEnVergunningen\": \"JA\",\n                          \"faillissementVerklaardOfAangevraagd\": \"JA\",\n                          \"uitstelVanBetalingAangevraagd\": \"JA\",\n                          \"stoppenOnderneming\": \"JA\",\n                          \"adresToevoegen\": \"JA\",\n                          \"directeurOfGrootaandeelhouder\": \"JA\",\n                          \"lopendeWerkzaamhedenOfVerplichtingen\": \"JA\",\n                          \"redenStoppenOnderneming\": \"Geen tijd meer voor\",\n                          \"adressen\": [\n                            {\n                              \"typeAdres\": \"hoofdadres\",\n                              \"adres\": {\n                                \"straatnaam\": \"Teststraat\",\n                                \"huisletter\": \"a\",\n                                \"huisnummertoevoeging\": \"\",\n                                \"postcode\": \"1111AA\",\n                                \"woonplaatsnaam\": \"Testdorp\",\n                                \"huisnummer\": 1\n                              }\n                            }\n                          ]\n                        }\n                    ]\n}",
+            "key": "gegevensVanuitAanvraag",
+            "type": "hidden",
+            "input": true,
+            "tableView": false
+        },
+        {
+            "label": "HTML",
+            "tag": "div",
+            "content": "<h5>Loondienst</h5>",
+            "refreshOnChange": false,
+            "customClass": "mb-3 style-title",
+            "key": "html1",
+            "type": "htmlelement",
+            "input": false,
+            "tableView": false
+        },
+        {
+            "label": "Loondienst Data Grid",
+            "reorder": false,
+            "addAnotherPosition": "bottom",
+            "layoutFixed": false,
+            "enableRowGroups": false,
+            "initEmpty": false,
+            "hideLabel": true,
+            "tableView": false,
+            "addAnother": "+1 toevoegen",
+            "key": "gegevensVanuitAanvraag.inkomstenAanvrager.loondienst",
+            "customDefaultValue": "data.gegevensBeoordeling?.inkomstenAanvrager?.loondienst?.length > 0 ? value = data.gegevensBeoordeling?.inkomstenAanvrager?.loondienst : value = data.gegevensVanuitAanvraag?.inkomstenAanvrager?.loondienst",
+            "type": "datagrid",
+            "input": true,
+            "components": [
+                {
+                    "label": "Columns",
+                    "hideLabel": true,
+                    "columns": [
+                        {
+                            "components": [
+                                {
+                                    "label": "Bedrijfsnaam werkgever",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "bedrijfsNaam",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Nettoloon",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "nettoLoon",
+                                    "type": "currency",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "currency": "EUR",
+                                    "input": true,
+                                    "delimiter": true
+                                },
+                                {
+                                    "label": "Periode van uitbetaling",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "periodiciteitUitbetalingLoon",
+                                    "dataSrc": "json",
+                                    "data": {
+                                        "json": [
+                                            {
+                                                "code": "2",
+                                                "name": "Week"
+                                            },
+                                            {
+                                                "code": "4",
+                                                "name": "4 weken (13 maanden)"
+                                            },
+                                            {
+                                                "code": "6",
+                                                "name": "Maand"
+                                            },
+                                            {
+                                                "code": "7",
+                                                "name": "Kwartaal"
+                                            }
+                                        ]
+                                    },
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "type": "select",
+                                    "template": "<span>{{ item.name }}</span>",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Loonheffingskorting toegepast",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "loonheffingskorting",
+                                    "dataSrc": "json",
+                                    "data": {
+                                        "json": [
+                                            {
+                                                "code": "1",
+                                                "name": "Ja"
+                                            },
+                                            {
+                                                "code": "2",
+                                                "name": "Nee"
+                                            }
+                                        ]
+                                    },
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "type": "select",
+                                    "template": "<span>{{ item.name }}</span>",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Additionele vergoedingen",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "additioneleVergoedingen",
+                                    "multiple": true,
+                                    "dataSrc": "json",
+                                    "data": {
+                                        "json": [
+                                            {
+                                                "code": "VAKANTIEGELD_PER_JAAR",
+                                                "name": "1 keer per jaar vakantiegeld"
+                                            },
+                                            {
+                                                "code": "VAKANTIEGELD_IEDERE_UITBETALING",
+                                                "name": "Vakantiegeld bij iedere uitbetaling van mijn salaris (dus niet 1 keer per jaar)"
+                                            },
+                                            {
+                                                "code": "DERTIENDE_MAAND_EINDEJAARSUITKERING",
+                                                "name": "Een 13de maand of eindejaarsuitkering"
+                                            },
+                                            {
+                                                "code": "REISKOSTENVERGOEDING",
+                                                "name": "Reiskostenvergoeding"
+                                            },
+                                            {
+                                                "code": "ONKOSTENVERGOEDING",
+                                                "name": "Onkostenvergoeding"
+                                            },
+                                            {
+                                                "code": "MAALTIJDVERGOEDING",
+                                                "name": "Maaltijdvergoeding"
+                                            },
+                                            {
+                                                "code": "NATURA",
+                                                "name": "Loon in natura (zoals eten of middelen)"
+                                            },
+                                            {
+                                                "code": "GEEN",
+                                                "name": "Aanvrager ontvangt geen vakantiegeld 1 keer per jaar, geen 13de maand of eindejaarsuitkering, geen reiskostenvergoeding, geen onkostenvergoeding, geen maaltijdvergoeding, geen loon in natura, geen vakantiegeld bij iedere uitbetaling van mijn salaris"
+                                            }
+                                        ]
+                                    },
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "type": "select",
+                                    "template": "<span>{{ item.name }}</span>",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Waarde loon in natura",
+                                    "applyMaskOn": "change",
+                                    "mask": false,
+                                    "tableView": true,
+                                    "currency": "EUR",
+                                    "inputFormat": "plain",
+                                    "truncateMultipleSpaces": false,
+                                    "key": "waardeLoonInNatura",
+                                    "customConditional": "show = false;\nshow = row.additioneleVergoedingen.some(item => item.code === 'NATURA');",
+                                    "type": "currency",
+                                    "input": true,
+                                    "delimiter": true
+                                },
+                                {
+                                    "label": "Maaltijdvergoeding",
+                                    "applyMaskOn": "change",
+                                    "mask": false,
+                                    "tableView": true,
+                                    "currency": "EUR",
+                                    "inputFormat": "plain",
+                                    "truncateMultipleSpaces": false,
+                                    "key": "maaltijdvergoeding",
+                                    "customConditional": "show = false;\nshow = row.additioneleVergoedingen.some(item => item.code === 'MAALTIJDVERGOEDING');",
+                                    "type": "currency",
+                                    "input": true,
+                                    "delimiter": true
+                                },
+                                {
+                                    "label": "Onkostenvergoeding",
+                                    "applyMaskOn": "change",
+                                    "mask": false,
+                                    "tableView": true,
+                                    "currency": "EUR",
+                                    "inputFormat": "plain",
+                                    "truncateMultipleSpaces": false,
+                                    "key": "onkostenvergoeding",
+                                    "customConditional": "show = false;\nshow = row.additioneleVergoedingen.some(item => item.code === 'ONKOSTENVERGOEDING');",
+                                    "type": "currency",
+                                    "input": true,
+                                    "delimiter": true
+                                },
+                                {
+                                    "label": "Reiskostenvergoeding",
+                                    "applyMaskOn": "change",
+                                    "mask": false,
+                                    "tableView": true,
+                                    "currency": "EUR",
+                                    "inputFormat": "plain",
+                                    "truncateMultipleSpaces": false,
+                                    "key": "reiskostenvergoeding",
+                                    "customConditional": "show = false;\nshow = row.additioneleVergoedingen.some(item => item.code === 'REISKOSTENVERGOEDING');",
+                                    "type": "currency",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "input": true,
+                                    "delimiter": true
+                                },
+                                {
+                                    "label": "Soort contract",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "soortContract",
+                                    "dataSrc": "json",
+                                    "data": {
+                                        "json": [
+                                            {
+                                                "code": "1",
+                                                "name": "Vast contract"
+                                            },
+                                            {
+                                                "code": "2",
+                                                "name": "Voor bepaalde tijd"
+                                            },
+                                            {
+                                                "code": "3",
+                                                "name": "Op oproepbasis"
+                                            },
+                                            {
+                                                "code": "4",
+                                                "name": "Uitzendbureau"
+                                            },
+                                            {
+                                                "code": "5",
+                                                "name": "0-uren contract"
+                                            }
+                                        ]
+                                    },
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "type": "select",
+                                    "template": "<span>{{ item.name }}</span>",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Aantal uur per week",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "aantalUurPerWeek",
+                                    "type": "number",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "input": true
+                                },
+                                {
+                                    "label": "Sprake van uurvermindering?",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "urenvermindering",
+                                    "dataSrc": "json",
+                                    "data": {
+                                        "json": [
+                                            {
+                                                "code": "1",
+                                                "name": "Ja"
+                                            },
+                                            {
+                                                "code": "2",
+                                                "name": "Nee"
+                                            }
+                                        ]
+                                    },
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "type": "select",
+                                    "template": "<span>{{ item.name }}</span>",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Contract wordt binnenkort beëindigd?",
+                                    "widget": "choicesjs",
+                                    "tableView": true,
+                                    "dataSrc": "json",
+                                    "data": {
+                                        "json": [
+                                            {
+                                                "code": "1",
+                                                "name": "Ja"
+                                            },
+                                            {
+                                                "code": "2",
+                                                "name": "Nee"
+                                            }
+                                        ]
+                                    },
+                                    "template": "<span>{{ item.name }}</span>",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "key": "contractBinnenkortBeeindigd",
+                                    "type": "select",
+                                    "applyMaskOn": "change",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Einddatum van het contract",
+                                    "format": "dd-MM-yyyy",
+                                    "tableView": false,
+                                    "datePicker": {
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false
+                                    },
+                                    "enableTime": false,
+                                    "enableMinDateInput": false,
+                                    "enableMaxDateInput": false,
+                                    "key": "einddatumContract",
+                                    "customConditional": "show = false;\nshow = row?.contractBinnenkortBeeindigd?.item.code === '1';",
+                                    "type": "datetime",
+                                    "input": true,
+                                    "widget": {
+                                        "type": "calendar",
+                                        "displayInTimezone": "viewer",
+                                        "locale": "en",
+                                        "useLocaleSettings": false,
+                                        "allowInput": true,
+                                        "mode": "single",
+                                        "enableTime": false,
+                                        "noCalendar": false,
+                                        "format": "dd-MM-yyyy",
+                                        "hourIncrement": 1,
+                                        "minuteIncrement": 1,
+                                        "time_24hr": false,
+                                        "minDate": null,
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false,
+                                        "maxDate": null
+                                    }
+                                }
+                            ],
+                            "width": 12,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 12
+                        },
+                        {
+                            "components": [],
+                            "width": 6,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 6
+                        }
+                    ],
+                    "key": "columns",
+                    "type": "columns",
+                    "input": false,
+                    "tableView": false
+                }
+            ]
+        },
+        {
+            "label": "HTML",
+            "tag": "div",
+            "content": "<h5>Medebewoners</h5>",
+            "refreshOnChange": false,
+            "customClass": "mb-3 style-title",
+            "key": "html1",
+            "type": "htmlelement",
+            "input": false,
+            "tableView": false
+        },
+        {
+            "label": "medebewoners Data Grid",
+            "reorder": false,
+            "addAnother": "+1 toevoegen",
+            "addAnotherPosition": "bottom",
+            "layoutFixed": false,
+            "enableRowGroups": false,
+            "initEmpty": false,
+            "hideLabel": true,
+            "tableView": false,
+            "key": "gegevensVanuitAanvraag.medebewoners",
+            "customDefaultValue": "data.gegevensBeoordeling?.medebewoners?.length > 0 ?  value = instance.component.defaultValue : value = data.gegevensVanuitAanvraag.medebewoners",
+            "type": "datagrid",
+            "customClass": "data-grid-alternating-colors",
+            "input": true,
+            "components": [
+                {
+                    "label": "Columns",
+                    "hideLabel": true,
+                    "columns": [
+                        {
+                            "components": [
+                                {
+                                    "label": "Voorletters(s)",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "voorletters",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Voornamen zoals op paspoort / ID staan",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "voornamen",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Voorvoegsel(s)",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "voorvoegsel",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Achternaam",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "achternaam",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Geboortedatum",
+                                    "format": "dd-MM-yyyy",
+                                    "tableView": false,
+                                    "datePicker": {
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false
+                                    },
+                                    "enableTime": false,
+                                    "enableMinDateInput": false,
+                                    "enableMaxDateInput": false,
+                                    "key": "geboortedatum",
+                                    "type": "datetime",
+                                    "input": true,
+                                    "widget": {
+                                        "type": "calendar",
+                                        "displayInTimezone": "viewer",
+                                        "locale": "en",
+                                        "useLocaleSettings": false,
+                                        "allowInput": true,
+                                        "mode": "single",
+                                        "enableTime": false,
+                                        "noCalendar": false,
+                                        "format": "dd-MM-yyyy",
+                                        "hourIncrement": 1,
+                                        "minuteIncrement": 1,
+                                        "time_24hr": false,
+                                        "minDate": null,
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false,
+                                        "maxDate": null
+                                    }
+                                },
+                                {
+                                    "label": "Relatie tot de medebewoner",
+                                    "widget": "choicesjs",
+                                    "tableView": true,
+                                    "data": {
+                                        "values": [
+                                            {
+                                                "value": "OUDERS",
+                                                "label": "Ouder(s)"
+                                            },
+                                            {
+                                                "value": "SCHOONOUDERS",
+                                                "label": "Schoonouder(s)"
+                                            },
+                                            {
+                                                "value": "OPA_OMA_BROER_ZUS",
+                                                "label": "Mijn opa, oma, broer of zus"
+                                            },
+                                            {
+                                                "value": "KAMER_VERHUUR",
+                                                "label": "Iemand die een kamer bij mij huurt"
+                                            },
+                                            {
+                                                "value": "KAMER_HUUR",
+                                                "label": "Ik huur een kamer van deze persoon"
+                                            },
+                                            {
+                                                "value": "GEEN_RELATIE",
+                                                "label": "Geen ouder(s), geen schoonouder(s), geen opa, oma, broer of zus, niet iemand die een kamer bij mij huurt, niet iemand van wie ik een kamer huur"
+                                            }
+                                        ]
+                                    },
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "key": "relatieMedebewoner",
+                                    "type": "select",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Burgerservicenummer ",
+                                    "inputMask": "999999999",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "validate": {
+                                        "custom": "valid = [...input].reverse().reduce( (accumulator, currentValue, currentIndex) => Number(accumulator) + (currentValue * (currentIndex === 0 ? -1 : currentIndex + 1)), 0 ) % 11 === 0 ? true : 'Voer een valide BSN in.'"
+                                    },
+                                    "key": "bsn",
+                                    "customConditional": "show = row?.relatieMedebewoner === 'OUDERS' || row?.relatieMedebewoner === 'SCHOONOUDERS' || row?.relatieMedebewoner === 'OPA_OMA_BROER_ZUS';",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Toelichting relatie tot medebewoner",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "toelichtingRelatieTotMedebewoner",
+                                    "type": "textfield",
+                                    "customConditional": "show = row?.relatieMedebewoner === 'GEEN_RELATIE';",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Te ontvangen huur",
+                                    "applyMaskOn": "change",
+                                    "mask": false,
+                                    "tableView": false,
+                                    "currency": "EUR",
+                                    "inputFormat": "plain",
+                                    "truncateMultipleSpaces": false,
+                                    "key": "teOntvangenHuur",
+                                    "type": "currency",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "customConditional": "show = row?.relatieMedebewoner === 'KAMER_VERHUUR';",
+                                    "input": true,
+                                    "delimiter": true
+                                },
+                                {
+                                    "label": "Frequentie ontvangen huur ",
+                                    "widget": "choicesjs",
+                                    "tableView": true,
+                                    "dataSrc": "json",
+                                    "data": {
+                                        "json": [
+                                            {
+                                                "code": "2",
+                                                "name": "Week"
+                                            },
+                                            {
+                                                "code": "4",
+                                                "name": "4 weken (13 maanden)"
+                                            },
+                                            {
+                                                "code": "6",
+                                                "name": "Maand"
+                                            },
+                                            {
+                                                "code": "7",
+                                                "name": "Kwartaal"
+                                            }
+                                        ]
+                                    },
+                                    "template": "<span>{{ item.name }}</span>",
+                                    "validate": {
+                                        "multiple": true,
+                                        "required": true
+                                    },
+                                    "key": "frequentieOntvangenHuur",
+                                    "type": "select",
+                                    "customConditional": "show = row?.relatieMedebewoner === 'KAMER_VERHUUR' && row?.teOntvangenHuur > 0;",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Wordt er met deze medebewoner een gezamenlijke huishouding gevoerd?",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": false,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA"
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE"
+                                        },
+                                        {
+                                            "label": "Onbekend",
+                                            "value": "ONBEKEND"
+                                        }
+                                    ],
+                                    "key": "gezamelijkeHuishouding",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "type": "radio",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Medebewoner volgt een opleiding",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": false,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": true
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": false
+                                        }
+                                    ],
+                                    "key": "volgtOpleiding",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "type": "radio",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Soort opleiding",
+                                    "widget": "choicesjs",
+                                    "tableView": true,
+                                    "data": {
+                                        "values": [
+                                            {
+                                                "value": "BASISSCHOOL",
+                                                "label": "Basisschool"
+                                            },
+                                            {
+                                                "value": "VMBO",
+                                                "label": "VMBO"
+                                            },
+                                            {
+                                                "value": "HAVO_VWO",
+                                                "label": "Havo of vwo"
+                                            },
+                                            {
+                                                "value": "MBO",
+                                                "label": "MBO"
+                                            },
+                                            {
+                                                "value": "HBO",
+                                                "label": "HBO"
+                                            },
+                                            {
+                                                "value": "WO",
+                                                "label": "WO"
+                                            },
+                                            {
+                                                "value": "ANDERS",
+                                                "label": "Anders"
+                                            }
+                                        ]
+                                    },
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "key": "soortOpleiding",
+                                    "conditional": {
+                                        "show": true,
+                                        "when": "gegevensBeoordeling.medebewoners.volgtOpleiding",
+                                        "eq": "true"
+                                    },
+                                    "type": "select",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Omschrijving opleiding",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "omschrijvingVolgtOpleiding",
+                                    "customConditional": "show = row?.soortOpleiding === 'ANDERS'",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Medebewoner volgt een BBL traject",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": false,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA"
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE"
+                                        }
+                                    ],
+                                    "key": "volgtBblTraject",
+                                    "customConditional": "show = row?.volgtOpleiding === false",
+                                    "type": "radio",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "input": true
+                                },
+                                {
+                                    "label": "Soort BBL traject?",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "soortBblTraject",
+                                    "customConditional": "show = row?.volgtBblTraject === 'JA'",
+                                    "type": "textfield",
+                                    "input": true
+                                }
+                            ],
+                            "width": 12,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 12
+                        },
+                        {
+                            "components": [],
+                            "width": 6,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 6
+                        }
+                    ],
+                    "key": "columns",
+                    "type": "columns",
+                    "input": false,
+                    "tableView": false
+                }
+            ]
+        },
+        {
+            "label": "HTML",
+            "tag": "div",
+            "content": "<h5>Onderneming</h5>",
+            "refreshOnChange": false,
+            "key": "html",
+            "type": "htmlelement",
+            "input": false,
+            "customClass": "mb-3 style-title",
+            "tableView": false
+        },
+        {
+            "label": "Ondernemingen Data Grid",
+            "reorder": false,
+            "addAnother": "+1 toevoegen",
+            "addAnotherPosition": "bottom",
+            "layoutFixed": false,
+            "enableRowGroups": false,
+            "initEmpty": false,
+            "hideLabel": true,
+            "tableView": false,
+            "customDefaultValue": "if (data.gegevensBeoordeling?.ondernemingen?.length > 0) {\n  value = data.gegevensBeoordeling?.ondernemingen;\n} else {\n  value = data.gegevensVanuitAanvraag?.ondernemingen;\n}\n",
+            "key": "gegevensVanuitAanvraag.ondernemingen",
+            "type": "datagrid",
+            "input": true,
+            "components": [
+                {
+                    "label": "Columns",
+                    "hideLabel": true,
+                    "columns": [
+                        {
+                            "components": [
+                                {
+                                    "label": "Wat is het KvK-nummer van uw onderneming?",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "key": "kvkRegistratie.kvkInschrijfnummer",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Wat is de naam van uw onderneming?",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "kvkRegistratie.naamOnderneming",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Wat is de datum van inschrijving?",
+                                    "format": "dd-MM-yyyy",
+                                    "tableView": false,
+                                    "datePicker": {
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false
+                                    },
+                                    "enableTime": false,
+                                    "enableMinDateInput": false,
+                                    "enableMaxDateInput": false,
+                                    "key": "kvkRegistratie.datumInschrijving",
+                                    "type": "datetime",
+                                    "input": true,
+                                    "widget": {
+                                        "type": "calendar",
+                                        "displayInTimezone": "viewer",
+                                        "locale": "en",
+                                        "useLocaleSettings": false,
+                                        "allowInput": true,
+                                        "mode": "single",
+                                        "enableTime": false,
+                                        "noCalendar": false,
+                                        "format": "dd-MM-yyyy",
+                                        "hourIncrement": 1,
+                                        "minuteIncrement": 1,
+                                        "time_24hr": false,
+                                        "minDate": null,
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false,
+                                        "maxDate": null
+                                    }
+                                },
+                                {
+                                    "label": "Wat is de datum van vestiging?",
+                                    "format": "dd-MM-yyyy",
+                                    "tableView": false,
+                                    "datePicker": {
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false
+                                    },
+                                    "enableTime": false,
+                                    "enableMinDateInput": false,
+                                    "enableMaxDateInput": false,
+                                    "key": "datumVestiging",
+                                    "type": "datetime",
+                                    "input": true,
+                                    "widget": {
+                                        "type": "calendar",
+                                        "displayInTimezone": "viewer",
+                                        "locale": "en",
+                                        "useLocaleSettings": false,
+                                        "allowInput": true,
+                                        "mode": "single",
+                                        "enableTime": false,
+                                        "noCalendar": false,
+                                        "format": "dd-MM-yyyy",
+                                        "hourIncrement": 1,
+                                        "minuteIncrement": 1,
+                                        "time_24hr": false,
+                                        "minDate": null,
+                                        "disableWeekends": false,
+                                        "disableWeekdays": false,
+                                        "maxDate": null
+                                    }
+                                },
+                                {
+                                    "label": "Geef een korte omschrijving van de activiteiten van uw onderneming",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "kvkRegistratie.omschrijvingActiviteiten",
+                                    "type": "textfield",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Wat is de rechtsvorm van uw onderneming?",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "kvkRegistratie.rechtsvorm",
+                                    "type": "select",
+                                    "data": {
+                                        "values": [
+                                            {
+                                                "label": "Eenmanszaak / ZZP",
+                                                "value": "EENMANSZAAK_ZZP"
+                                            },
+                                            {
+                                                "label": "Vennotschap Onder Firma (VOF)",
+                                                "value": "VENNOOTSCHAP_ONDER_FIRMA_VOF"
+                                            },
+                                            {
+                                                "label": "Commanditaire Vennootchap (CV)",
+                                                "value": "COMMANDITAIRE_VENNOOTSCHAP_CV"
+                                            },
+                                            {
+                                                "label": "Besloten Vennootschap (BV)",
+                                                "value": "BESLOTEN_VENNOOTSCHAP_BV"
+                                            },
+                                            {
+                                                "label": "Maatschap",
+                                                "value": "MAATSCHAP"
+                                            },
+                                            {
+                                                "label": "Stichting (met winstoogmerk)",
+                                                "value": "STICHTING_MET_WINSTOOGMERK"
+                                            },
+                                            {
+                                                "label": "Onbekend",
+                                                "value": "ONBEKEND"
+                                            }
+                                        ]
+                                    },
+                                    "input": true,
+                                    "validate": {
+                                        "required": true
+                                    }
+                                },
+                                {
+                                    "label": "Hoeveel vennoten heeft uw onderneming?",
+                                    "applyMaskOn": "change",
+                                    "mask": false,
+                                    "tableView": true,
+                                    "delimiter": false,
+                                    "requireDecimal": false,
+                                    "inputFormat": "plain",
+                                    "truncateMultipleSpaces": false,
+                                    "validate": {
+                                        "customMessage": "Voer een getal in.",
+                                        "pattern": "^\\d+$"
+                                    },
+                                    "key": "kvkRegistratie.aantalVennoten",
+                                    "customConditional": "row.kvkRegistratie.rechtsvorm === 'VENNOOTSCHAP_ONDER_FIRMA_VOF' ? show = true : show = false;",
+                                    "type": "number",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Bent u directeur-grootaandeelhouder (DGA) van deze onderneming?",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": true,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "Onbekend",
+                                            "value": "ONBEKEND",
+                                            "shortcut": ""
+                                        }
+                                    ],
+                                    "key": "directeurOfGrootaandeelhouder",
+                                    "customConditional": "row.kvkRegistratie.rechtsvorm === 'BESLOTEN_VENNOOTSCHAP_BV' ? show = true : show = false;",
+                                    "type": "radio",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "applyMaskOn": "change",
+                                    "input": true,
+                                    "defaultValue": "ONBEKEND"
+                                },
+                                {
+                                    "label": "Heeft u alle diploma's en vergunningen die nodig zijn voor uw onderneming? ",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": true,
+                                    "defaultValue": "ONBEKEND",
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "N.V.T.",
+                                            "value": "NVT",
+                                            "shortcut": ""
+                                        }
+                                    ],
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "validateWhenHidden": false,
+                                    "key": "alleDiplomasEnVergunningen",
+                                    "type": "radio",
+                                    "applyMaskOn": "change",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Is uw onderneming failliet verklaard of is een faillissement aangevraagd?",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": true,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE",
+                                            "shortcut": ""
+                                        }
+                                    ],
+                                    "key": "faillissementVerklaardOfAangevraagd",
+                                    "type": "radio",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "applyMaskOn": "change",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Is er voor uw onderneming uitstel van betaling aangevraagd (surseance)? ",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": true,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE",
+                                            "shortcut": ""
+                                        }
+                                    ],
+                                    "key": "uitstelVanBetalingAangevraagd",
+                                    "type": "radio",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "applyMaskOn": "change",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Wilt u (binnenkort) stoppen met uw onderneming",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": true,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE",
+                                            "shortcut": ""
+                                        }
+                                    ],
+                                    "key": "stoppenOnderneming",
+                                    "type": "radio",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "applyMaskOn": "change",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Heeft u de komende tijd nog werkzaamheden of lopende verplichtingen vanuit uw onderneming? ",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": true,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA",
+                                            "shortcut": ""
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE",
+                                            "shortcut": ""
+                                        }
+                                    ],
+                                    "key": "lopendeWerkzaamhedenOfVerplichtingen",
+                                    "customConditional": "row.stoppenOnderneming === 'JA' ? show = true : show = false;",
+                                    "type": "radio",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "applyMaskOn": "change",
+                                    "input": true
+                                },
+                                {
+                                    "label": "Geef kort aan waarom u wilt stoppen met uw bedrijf",
+                                    "applyMaskOn": "change",
+                                    "tableView": true,
+                                    "key": "redenStoppenOnderneming",
+                                    "type": "textarea",
+                                    "customConditional": "row.stoppenOnderneming === 'JA' ? show = true : show = false;",
+                                    "validate": {
+                                        "maxWords": 250
+                                    },
+                                    "input": true
+                                },
+                                {
+                                    "label": "Adres van onderneming toevoegen? ",
+                                    "optionsLabelPosition": "right",
+                                    "inline": false,
+                                    "tableView": true,
+                                    "values": [
+                                        {
+                                            "label": "Ja",
+                                            "value": "JA"
+                                        },
+                                        {
+                                            "label": "Nee",
+                                            "value": "NEE"
+                                        }
+                                    ],
+                                    "key": "adresToevoegen",
+                                    "type": "radio",
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "applyMaskOn": "change",
+                                    "input": true,
+                                    "defaultValue": "NEE"
+                                },
+                                {
+                                    "label": "adres ondernemingen",
+                                    "reorder": false,
+                                    "hideLabel": true,
+                                    "addAnotherPosition": "bottom",
+                                    "layoutFixed": false,
+                                    "enableRowGroups": false,
+                                    "initEmpty": false,
+                                    "tableView": false,
+                                    "key": "adressen",
+                                    "customConditional": "row.adresToevoegen === 'JA' ? show = true : show = false;",
+                                    "type": "datagrid",
+                                    "addAnother": "+1 adres toevoegen",
+                                    "customClass": "background-color-inner-datagrid",
+                                    "input": true,
+                                    "components": [
+                                        {
+                                            "label": "Columns",
+                                            "hideLabel": true,
+                                            "columns": [
+                                                {
+                                                    "components": [
+                                                        {
+                                                            "label": "Type adres",
+                                                            "widget": "choicesjs",
+                                                            "tableView": true,
+                                                            "data": {
+                                                                "values": [
+                                                                    {
+                                                                        "label": "Hoofdadres",
+                                                                        "value": "hoofdadres"
+                                                                    },
+                                                                    {
+                                                                        "label": "Locatie adres",
+                                                                        "value": "locatieadres"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "key": "typeAdres",
+                                                            "type": "select",
+                                                            "validate": {
+                                                                "required": true
+                                                            },
+                                                            "input": true
+                                                        },
+                                                        {
+                                                            "label": "Straat",
+                                                            "applyMaskOn": "change",
+                                                            "tableView": true,
+                                                            "key": "adres.straatnaam",
+                                                            "type": "textfield",
+                                                            "input": true
+                                                        },
+                                                        {
+                                                            "label": "Huisnummer",
+                                                            "applyMaskOn": "change",
+                                                            "tableView": true,
+                                                            "key": "adres.huisnummer",
+                                                            "type": "number",
+                                                            "input": true
+                                                        },
+                                                        {
+                                                            "label": "Huisletter",
+                                                            "applyMaskOn": "change",
+                                                            "tableView": true,
+                                                            "key": "adres.huisletter",
+                                                            "type": "textfield",
+                                                            "input": true
+                                                        },
+                                                        {
+                                                            "label": "Huisnummer toevoeging",
+                                                            "applyMaskOn": "change",
+                                                            "tableView": true,
+                                                            "key": "adres.huisnummertoevoeging",
+                                                            "type": "textfield",
+                                                            "input": true
+                                                        },
+                                                        {
+                                                            "label": "Postcode",
+                                                            "applyMaskOn": "change",
+                                                            "tableView": true,
+                                                            "key": "adres.postcode",
+                                                            "type": "textfield",
+                                                            "input": true
+                                                        },
+                                                        {
+                                                            "label": "Plaatsnaam",
+                                                            "applyMaskOn": "change",
+                                                            "tableView": true,
+                                                            "key": "adres.woonplaatsnaam",
+                                                            "type": "textfield",
+                                                            "input": true
+                                                        }
+                                                    ],
+                                                    "width": 12,
+                                                    "offset": 0,
+                                                    "push": 0,
+                                                    "pull": 0,
+                                                    "size": "md",
+                                                    "currentWidth": 12
+                                                },
+                                                {
+                                                    "components": [],
+                                                    "width": 6,
+                                                    "offset": 0,
+                                                    "push": 0,
+                                                    "pull": 0,
+                                                    "size": "md",
+                                                    "currentWidth": 6
+                                                }
+                                            ],
+                                            "key": "columns",
+                                            "type": "columns",
+                                            "input": false,
+                                            "tableView": false
+                                        }
+                                    ]
+                                }
+                            ],
+                            "width": 12,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 12
+                        },
+                        {
+                            "components": [],
+                            "width": 6,
+                            "offset": 0,
+                            "push": 0,
+                            "pull": 0,
+                            "size": "md",
+                            "currentWidth": 6
+                        }
+                    ],
+                    "key": "columns",
+                    "type": "columns",
+                    "input": false,
+                    "tableView": false
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "label": "Submit",
+            "key": "submit",
+            "disableOnInvalid": true,
+            "input": true,
+            "tableView": false
+        }
+    ]
+}

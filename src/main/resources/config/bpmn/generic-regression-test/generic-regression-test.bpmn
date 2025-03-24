@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_11r1bjb" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.32.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22.0">
+  <bpmn:collaboration id="Collaboration_1u9mhgm">
+    <bpmn:participant id="GenericRegressionTestMainParticipant" name="Generic Regression Test: Main" processRef="generic-regression-test" />
+  </bpmn:collaboration>
+  <bpmn:process id="generic-regression-test" name="Generic Regression Test: Main" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_026lm33</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="BeoordelenLoondienstTask" name="Beoordelen Loondienst" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:candidateGroups="ROLE_ADMIN">
+      <bpmn:incoming>Flow_026lm33</bpmn:incoming>
+      <bpmn:outgoing>Flow_1go8yg8</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="BeoordelenOndernemingTask" name="Beoordelen Onderneming" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:candidateGroups="ROLE_ADMIN">
+      <bpmn:incoming>Flow_0dqexzv</bpmn:incoming>
+      <bpmn:outgoing>Flow_0epcsr0</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="BeoordelenMedebewonersTask" name="Beoordelen Medebewoners" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:candidateGroups="ROLE_ADMIN">
+      <bpmn:incoming>Flow_1go8yg8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dqexzv</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="OpvragenInformatieTask" name="Opvragen Informatie" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:candidateGroups="ROLE_ADMIN">
+      <bpmn:incoming>Flow_0epcsr0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0z8xvxe</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_026lm33" sourceRef="StartEvent_1" targetRef="BeoordelenLoondienstTask" />
+    <bpmn:sequenceFlow id="Flow_1go8yg8" sourceRef="BeoordelenLoondienstTask" targetRef="BeoordelenMedebewonersTask" />
+    <bpmn:sequenceFlow id="Flow_0dqexzv" sourceRef="BeoordelenMedebewonersTask" targetRef="BeoordelenOndernemingTask" />
+    <bpmn:sequenceFlow id="Flow_0epcsr0" sourceRef="BeoordelenOndernemingTask" targetRef="OpvragenInformatieTask" />
+    <bpmn:sequenceFlow id="Flow_0z8xvxe" sourceRef="OpvragenInformatieTask" targetRef="Event_07wlyjb" />
+    <bpmn:endEvent id="Event_07wlyjb">
+      <bpmn:incoming>Flow_0z8xvxe</bpmn:incoming>
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1u9mhgm">
+      <bpmndi:BPMNShape id="Participant_0k9bckh_di" bpmnElement="GenericRegressionTestMainParticipant" isHorizontal="true">
+        <dc:Bounds x="132" y="80" width="838" height="360" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="182" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0sstjgj_di" bpmnElement="BeoordelenLoondienstTask">
+        <dc:Bounds x="270" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_03yfil7" bpmnElement="BeoordelenOndernemingTask">
+        <dc:Bounds x="590" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1s6dat3" bpmnElement="BeoordelenMedebewonersTask">
+        <dc:Bounds x="430" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_039p8cb" bpmnElement="OpvragenInformatieTask">
+        <dc:Bounds x="740" y="220" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_07wlyjb_di" bpmnElement="Event_07wlyjb">
+        <dc:Bounds x="892" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_026lm33_di" bpmnElement="Flow_026lm33">
+        <di:waypoint x="218" y="260" />
+        <di:waypoint x="270" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1go8yg8_di" bpmnElement="Flow_1go8yg8">
+        <di:waypoint x="370" y="260" />
+        <di:waypoint x="430" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dqexzv_di" bpmnElement="Flow_0dqexzv">
+        <di:waypoint x="530" y="260" />
+        <di:waypoint x="590" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0epcsr0_di" bpmnElement="Flow_0epcsr0">
+        <di:waypoint x="690" y="260" />
+        <di:waypoint x="740" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0z8xvxe_di" bpmnElement="Flow_0z8xvxe">
+        <di:waypoint x="840" y="260" />
+        <di:waypoint x="892" y="260" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

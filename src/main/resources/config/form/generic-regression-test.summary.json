@@ -1,0 +1,16 @@
+{
+    "display": "form",
+    "components": [
+        {
+            "label": "HTML",
+            "tag": "div",
+            "content": "<h5>Met dit dossier kan je bestaande valtimo / formIO functionaliteit regressie testen - v12</h5>",
+            "refreshOnChange": false,
+            "customClass": "mb-3 style-title",
+            "key": "html1",
+            "type": "htmlelement",
+            "input": false,
+            "tableView": false
+        }
+    ]
+}
