@@ -104,7 +104,7 @@ spring:
         basename: i18n/messages
     main.allow-bean-definition-overriding: true
     jersey:
-        application-path: /api/camunda-rest
+        application-path: /api/operaton-rest
     autoconfigure:
         exclude:
             - org.springframework.boot.actuate.autoconfigure.metrics.web.tomcat.TomcatMetricsAutoConfiguration
@@ -175,7 +175,7 @@ scheduling:
             cleanupAuditEvents: 0 0 4 * * ? # Every day at 00:00
             taskNotificationReminder: 0 0 10 * * ? # Every day at 10:00
 
-camunda:
+operaton:
     bpm:
         database:
             type: postgres
@@ -186,5 +186,5 @@ camunda:
                 enforceHistoryTimeToLive: false
         admin-user:
             id: Admin
-            password: ${CAMUNDA_BPM_ADMIN-USER_PASSWORD}
+            password: ${OPERATON_BPM_ADMIN-USER_PASSWORD}
             first-name: Admin account
