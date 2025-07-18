@@ -104,7 +104,7 @@ spring:
         basename: i18n/messages
     main.allow-bean-definition-overriding: true
     jersey:
-        application-path: /api/operaton-rest
+        application-path: /api/camunda-rest
     autoconfigure:
         exclude:
             - org.springframework.boot.actuate.autoconfigure.metrics.web.tomcat.TomcatMetricsAutoConfiguration
