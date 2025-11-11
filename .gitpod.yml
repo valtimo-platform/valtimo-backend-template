@@ -1,4 +1,4 @@
-image: ritensebv/gitpod-java17-postgres:11-7-23-4
+image: ritense/gitpod:java17-postgres
 vscode:
   extensions:
     - richardwillis.vscode-gradle
