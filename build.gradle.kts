@@ -40,8 +40,6 @@ repositories {
 }
 
 val valtimoVersion: String by project
-val postgresqlDriverVersion: String by project
-val nettyResolverDnsNativeMacOsVersion: String by project
 val mockitoKotlinVersion: String by project
 
 dependencies {
@@ -59,11 +57,7 @@ dependencies {
     implementation("com.ritense.valtimo:objecttypen-api")
     implementation("com.ritense.valtimo:zaken-api")
 
-    implementation("org.postgresql:postgresql:$postgresqlDriverVersion")
-
-    if (System.getProperty("os.arch") == "aarch64") {
-        runtimeOnly("io.netty:netty-resolver-dns-native-macos:$nettyResolverDnsNativeMacOsVersion:osx-aarch_64")
-    }
+    implementation("org.postgresql:postgresql")
 
     // Kotlin logger
     implementation("io.github.oshai:kotlin-logging")
