@@ -52,7 +52,7 @@ dependencies {
     implementation("com.ritense.valtimo:valtimo-dependencies")
 
     implementation("com.ritense.valtimo:local-document-generation")
-    implementation("com.ritense.valtimo:local-resource")
+    implementation("com.ritense.valtimo:s3-resource")
     implementation("com.ritense.valtimo:local-mail")
     implementation("com.ritense.valtimo:milestones")
     implementation("com.ritense.valtimo:object-management")
