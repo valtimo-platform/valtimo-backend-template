@@ -177,6 +177,9 @@ valtimo:
     plugin:
         encryption-secret: ${VALTIMO_PLUGIN_ENCRYPTIONSECRET}
     database: postgres
+    changelog:
+        pbac:
+            clear-tables: true
     security:
         whitelist:
             hosts:
